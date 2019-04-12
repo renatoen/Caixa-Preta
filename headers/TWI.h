@@ -26,11 +26,12 @@
 
 class TWI {
 private:
-	uint16_t address, cont, numRepeatStart;
-
-  	bool repeatStart;
+	uint16_t cont, numRepeatStart;
 
 	bool waitTask();
+
+public:
+	TWI(int freq);
 
 	bool sendStart();
 
@@ -38,16 +39,13 @@ private:
 
 	void sendStop();
 
-	bool sendWriteAddress();
+	bool sendReadAddress(byte address);
 
-	bool sendReadAddress();
+	bool sendWriteAddress(byte address);
 
-public:
-	TWI(int address, int freq);
+	bool sendData(byte dado);
 
-	bool sendData(uint8_t dado, bool willContinue = false);
-
-	uint8_t readData(bool ack, bool willContinue = false);
+	uint8_t readData(bool ack);
 
 };
 

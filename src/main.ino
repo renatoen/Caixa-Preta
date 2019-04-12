@@ -1,18 +1,58 @@
 #include "../headers/Timer5.h"
 #include "../headers/Leds.h"
+#include "../headers/MPU.h"
+#include "../headers/USART.h"
 
 LCD screen;
 Leds leds;
 Button key;
 
 void setup() {
-	Serial.begin(115200);
+	int i;
+	// Serial.begin(115200);
 	// LCD
 	screen.startConfig();
 	screen.cursor(OFF);
 
 	// Timer
 	Timer5 timer = Timer5(&screen, &key);
+
+	//USART
+	USART monitor(0, 115200);
+
+	// MPU
+	MPU teste(55);
+	teste.wakeUp();
+
+	i = teste.whoAmI();
+
+	if (i == 0x73) {
+		screen.loadBuffer("MPU OK", 0, 0);
+	} else {
+		screen.loadBuffer("MPU NOK", 0, 0);
+	}
+
+	while (true) {
+		teste.readAccelTempGyros();
+		// Serial.print(teste.axi);      Serial.print("  ");
+      // Serial.print(teste.ayi);      Serial.print("  ");
+      // Serial.print(teste.azi);      Serial.print(" | ");
+      // Serial.print(teste.gxi);      Serial.print("  ");
+      // Serial.print(teste.gyi);      Serial.print("  ");
+      // Serial.println(teste.gzi);
+		monitor.print(teste.axi);
+		monitor.print("  ");
+      	monitor.print(teste.ayi);
+		monitor.print("  ");
+      	monitor.print(teste.azi);
+		monitor.print(" | ");
+      	monitor.print(teste.gxi);
+		monitor.print("  ");
+      	monitor.print(teste.gyi);
+		monitor.print("  ");
+      	monitor.println(teste.gzi);
+      	delay(500);
+	}
 }
 
 void loop() {

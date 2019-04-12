@@ -3,17 +3,9 @@
 
 // Includes
 #include <Arduino.h>
+#include "TWI.h"
 
 // Defines
-
-//////////// 24LC512 ou 24LC1025 - Flash externa
-// Mudar nomes para FLASH ...
-#define M24LC_ADR 0x50    //Endereço da 24lC512 ou 24LC1025 (Limitar em 64 KB)
-#define M24LC_EWR 0xA0    //24LC para escrita (0x50<<1)
-#define M24LC_ERD 0xA1    //24LC para leitura (0x50<<1 + 1)
-#define FLASH_ADR_LIM   65536L  //Limitar uso em 64 KB
-#define FLASH_PAG   128   //Tamanho da págnia para gravação
-
 
 /////////////// MPU 9250 - Constantes
 #define MPU_ADR  0x68  // Endereço MPU-9250
@@ -53,33 +45,30 @@
 #define FIFO_R_W         0x74
 #define WHO_AM_I         0x75
 
-/////////////// TWI - Códigos de Status
-#define TWI_START_OK      8     // Start OK
-#define TWI_START_REP_OK  0x10  // Start Repetido OK
-#define TWI_SLA_WR_ACK    0x18  // EET enviado e ACK recebido
-#define TWI_SLA_WR_NACK   0x20  // EET enviado e NACK recebido
-#define TWI_TX_DATA_ACK   0x28  // Dado enviado e ACK recebido
-#define TWI_SLA_RD_ACK    0x40  // EER enviado e ACK recebido
-#define TWI_SLA_RD_NACK   0x48  // EER enviar e NACK recebido
-#define TWI_RX_DATA_NACK  0x58  // Dado recebido e NACK gerado
-#define TWI_RX_DATA_ACK   0x50  // Dado recebido e ACK gerado
-#define TWI_TMI_OUT       10000 // Time out
-
-#define TWI_ERRO_1  1   // Erro ao gerar START
-#define TWI_ERRO_2  2   // Erro ao gerar START Repetido
-#define TWI_ERRO_3  3   // Erro Escravo Receptor endereçado (ER) não enviou ACK
-#define TWI_ERRO_4  4   // Erro Escravo Transmissor endereçado (ET) não enviou ACK
-#define TWI_ERRO_5  5   // Erro Escravo Receptor (ER) não enviou ACK após envio do dado
-#define TWI_ERRO_6  6   // Erro ao receber um dado do Escravo Transmissor (ET) e gerar um ACK
-#define TWI_ERRO_7  7   // Erro ao receber um dado do Escravo Transmissor (ET) e gerar um NACK
-#define TWI_ERRO_8  8   // Erro ao esperar TWINT - Timeout esperando TWINT ir para 1
-
 class MPU {
 private:
+	// variáveis
+	int frequencia;
+	float giro_res, acel_res;
 
 public:
-	MPU();
+	// variáveis
+	int axi,ayi,azi,tpi,gxi,gyi,gzi;      // leituras instantâneas do MPU
 
+	// métodos
+	MPU(int freq);
+	bool writeRegister(byte reg, byte dado);
+	byte readRegister(byte reg);
+	bool writeBlockData(byte reg, byte* dado, byte qtd);
+	void readBlockData(byte reg, byte* dado, byte qtd);
+	byte whoAmI();
+	void wakeUp();
+	void sleep();
+	void setScale(byte gfs, byte afs);
+	void readAverageAccelTempGyros(word rpt);
+	void readAccelTempGyros();
+	bool selfTest();
+	void calibrate(int16_t *bias, float  *valor);
 };
 
 #endif

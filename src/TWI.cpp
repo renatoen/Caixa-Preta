@@ -6,12 +6,10 @@
  * @param address endereço do escravo
  * @param freq frequência utilizada
  */
-TWI::TWI(int address, int freq) {
+TWI::TWI(int freq) {
 
-	this->address = address;
 	this->cont = 0;
 	this->numRepeatStart = 0;
-	this->repeatStart = false;
 
 	switch (freq) {
 		case 55:
@@ -58,6 +56,10 @@ bool TWI::waitTask() {
 	return true;
 }
 
+/**
+ * Envia um sinal de start. Caso falhe, repete REPEAT_START vezes.
+ * @return TRUE se start ocorreu e FALSE caso contrário
+ */
 bool TWI::sendStart() {
 	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
 
@@ -80,6 +82,10 @@ bool TWI::sendStart() {
 	}
 }
 
+/**
+ * Envia um sinal de start repetido. Caso falhe, repete REPEAT_START vezes.
+ * @return TRUE se start repetido ocorreu e FALSE caso contrário
+ */
 bool TWI::sendRepeatedStart() {
 	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
 
@@ -94,7 +100,7 @@ bool TWI::sendRepeatedStart() {
 	} else {
 		// não enviou o start, repete o envio
 		if (++this->numRepeatStart != REPEAT_START) {
-			sendStart();
+			sendRepeatedStart();
 		} else {
 			this->numRepeatStart = 0;
 			return false;
@@ -102,13 +108,21 @@ bool TWI::sendRepeatedStart() {
 	}
 }
 
+/**
+ * Envia um sinal de stop.
+ */
 void TWI::sendStop() {
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
 	delay(1); //(para CLK=1 MHz) atraso para que STOP seja percebido
 }
 
-bool TWI::sendWriteAddress() {
-	TWDR = this->address;
+/**
+ * Envia o endereço de escrita.
+ * @param address endereço de escrita
+ * @return TRUE se endereço foi enviado e FALSE caso contrário
+ */
+bool TWI::sendWriteAddress(byte address) {
+	TWDR = address;
 	TWCR = (1<<TWINT) | (1<<TWEN);
 
 	if (waitTask()) {
@@ -123,8 +137,13 @@ bool TWI::sendWriteAddress() {
 	}
 }
 
-bool TWI::sendReadAddress() {
-	TWDR = this->address;
+/**
+ * Envia o endereço de leitura.
+ * @param address endereço de leitura
+ * @return TRUE se endereço foi enviado e FALSE caso contrário
+ */
+bool TWI::sendReadAddress(byte address) {
+	TWDR = address;
 	TWCR = (1<<TWINT) | (1<<TWEN);
 
 	if (waitTask()) {
@@ -139,87 +158,59 @@ bool TWI::sendReadAddress() {
 	}
 }
 
-bool TWI::sendData(uint8_t dado, bool willContinue) {
+/**
+ * Envia um dado.
+ * @param dado dado que vai ser enviado
+ * @return TRUE se o dado foi enviado e FALSE caso contrário
+ */
+bool TWI::sendData(uint8_t dado) {
 
-	if (this->repeatStart ? sendRepeatedStart() : sendStart()) {
-		if (sendWriteAddress()) {
-			TWDR = dado;
-			TWCR = (1<<TWINT) | (1<<TWEN);
+	TWDR = dado;
+	TWCR = (1<<TWINT) | (1<<TWEN);
 
-			if (waitTask()) {
-				if ((TWSR & 0xF8) == TX_DATA_ACK) {
-					if (willContinue) {
-						this->repeatStart = true;
-					} else {
-						this->repeatStart = false;
-						sendStop();
-					}
-					return true;
-				} else {
-					// erro: ack não recebido
-					sendStop();
-					return false;
-				}
-			} else {
-				// erro: tarefa nunca concluida
-				sendStop();
-				return false;
-			}
-
-		} else{
+	if (waitTask()) {
+		if ((TWSR & 0xF8) == TX_DATA_ACK) {
+			return true;
+		} else {
+			// erro: ack não recebido
 			sendStop();
 			return false;
 		}
 	} else {
-		// erro de sendStart
+		// erro: tarefa nunca concluida
 		sendStop();
 		return false;
 	}
 }
 
-uint8_t TWI::readData(bool ack, bool willContinue) {
+/**
+ * Lê um dado.
+ * @param ack determina se quer receber ACK (TRUE) ou NACK (FALSE)
+ * @return dado lido
+ */
+uint8_t TWI::readData(bool ack) {
 	byte status;
-	if (this->repeatStart ? sendRepeatedStart() : sendStart()) {
-		if (sendReadAddress()) {
-			if (ack == true) { // envia ack
-				TWCR = (1<<TWINT) | (1<<TWEA) | (1<<TWEN);  // Iniciar recepção (TWEA=1 --> ACK)
-				status = RX_DATA_ACK;
-			} else if (ack == false) { // envia nack
-				TWCR = (1<<TWINT) | (1<<TWEN);      // Iniciar recepção (TWEA=0 --> NACK)
-				status = RX_DATA_NACK;
-			}
 
-			if (waitTask()) {
-				if ((TWSR & 0xF8) == status) {
-					if (willContinue) {
-						this->repeatStart = true;
-					} else {
-						this->repeatStart = false;
-						sendStop();
-					}
+	if (ack == true) { // envia ack
+		TWCR = (1<<TWINT) | (1<<TWEA) | (1<<TWEN);  // Iniciar recepção (TWEA=1 --> ACK)
+		status = RX_DATA_ACK;
+	} else if (ack == false) { // envia nack
+		TWCR = (1<<TWINT) | (1<<TWEN);      // Iniciar recepção (TWEA=0 --> NACK)
+		status = RX_DATA_NACK;
+	}
 
-					return TWDR;
-				} else {
-					//erro
-					sendStop();
-					return 0;
-				}
-			} else {
-				//erro
-				sendStop();
-
-				return 0;
-			}
-
+	if (waitTask()) {
+		if ((TWSR & 0xF8) == status) {
+			return TWDR;
 		} else {
-			// erro do sendReadAddress
+			//erro: info nunca recebida
 			sendStop();
-
 			return 0;
 		}
 	} else {
-		//Erro do sendStart
+		//erro: tarefa nunca concluida
 		sendStop();
+
 		return 0;
 	}
 }
