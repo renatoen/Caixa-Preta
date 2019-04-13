@@ -56,6 +56,7 @@ public:
 	int axi,ayi,azi,tpi,gxi,gyi,gzi;      // leituras instantâneas do MPU
 
 	// métodos
+	MPU();
 	MPU(int freq);
 	bool writeRegister(byte reg, byte dado);
 	byte readRegister(byte reg);

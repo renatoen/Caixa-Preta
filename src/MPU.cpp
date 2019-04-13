@@ -1,5 +1,9 @@
 #include "../headers/MPU.h"
 
+MPU::MPU() {
+
+}
+
 /**
  * Init da classe. Coloca o MPU num estado conhecido. Algumas operações
  * podem ser redundantes.

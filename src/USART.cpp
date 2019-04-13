@@ -1,5 +1,9 @@
 #include "../headers/USART.h"
 
+USART::USART() {
+
+}
+
 /**
  * Init da classe. Inicia uma comunicação serial em uma das portas do arduino
  * utilizando o baud rate informado
@@ -131,8 +135,10 @@ void USART::println(char dado[]) {
  * Imprime em decimal com sinal, retirando os zeros à esquerda
  * @param dado dado que será impresso
  */
-void USART::print(int dado) {
-	int aux,dv;
+void USART::print(long dado) {
+	int dv;
+	long aux;
+	bool aux2 = false;
 
 	if (dado < 0) {
 		sendByte('-');
@@ -145,7 +151,8 @@ void USART::print(int dado) {
 	} else {
 		for(byte i = 5; i > 0; i--) {
 			aux = dado/dv;
-			if (aux != 0) {
+			if (aux != 0 || aux2) {
+				aux2 = true;
 				sendByte(0x30+aux);
 			}
 			dado = dado - (dv*aux);
@@ -155,36 +162,61 @@ void USART::print(int dado) {
 }
 
 /**
+ * Imprime em decimal com sinal, retirando os zeros à esquerda
+ * @param dado dado que será impresso
+ */
+void USART::print(int dado) {
+	print(long(dado));
+}
+
+/**
  * Imprime em decimal com sinal e pula uma linha
  * @param dado dado que será impresso
  */
-void USART::println(int dado) {
+void USART::println(long dado) {
 	print(dado);
 	sendByte('\n');
 }
 
 /**
- * Imprime em float xx.xx
+ * Imprime em decimal com sinal e pula uma linha
  * @param dado dado que será impresso
  */
-void USART::print(float dado) {
-  	int aux,val;
-  	aux = int(dado);
-  	print(byte(aux));
-  	val = 1000 * (dado - aux);
-  	val = val/10;
-  	sendByte(',');
-  	aux = val/10;
-  	sendByte(0x30 + aux);
-  	val = val - 10 * aux;
-  	sendByte(0x30 + val);
+void USART::println(int dado) {
+	print(long(dado));
+	sendByte('\n');
 }
 
 /**
- * Imprime em float xx.xx e pula uma linha
+ * Imprime em double xx.xxxxxx
  * @param dado dado que será impresso
  */
-void USART::println(float dado) {
+void USART::print(double dado) {
+
+  	long inteiro, decimal, aux = 0;
+
+	if (dado < 0) {
+		sendByte('-');
+	}
+
+	dado = fabs(dado);
+  	inteiro = long(dado);
+  	print(inteiro);
+
+	sendByte(',');
+
+	for (int i = 1; i < 7; i++) {
+		decimal = (pow(10,i) * (dado - inteiro)) - 10*aux;
+		aux = aux*10 + decimal;
+		print(decimal);
+	}
+}
+
+/**
+ * Imprime em double xx.xxxxxx e pula uma linha
+ * @param dado dado que será impresso
+ */
+void USART::println(double dado) {
 	print(dado);
 	sendByte('\n');
 }
@@ -198,16 +230,25 @@ void USART::println(float dado) {
  */
 void USART::print(word dado, int modo) {
   	int aux,dv;
+	bool aux2 = false;
 
 	if (modo == DEC) {
 	  	dv = 10000;
 	  	dado = abs(dado);
-	  	for (byte i = 5; i > 0; i--){
-	    	aux = dado/dv;
-	    	sendByte(0x30+aux);
-	    	dado = dado - (dv*aux);
-	    	dv = dv/10;
-	  	}
+
+		if (dado == 0) {
+			sendByte(0x30);
+		} else {
+		  	for (byte i = 5; i > 0; i--) {
+		    	aux = dado/dv;
+				if (aux != 0 || aux2) {
+					aux2 = true;
+					sendByte(0x30+aux);
+				}
+		    	dado = dado - (dv*aux);
+		    	dv = dv/10;
+		  	}
+		}
 	} else if (modo == HEX) {
 		print(byte(dado>>8), modo);
 		print(byte(dado&0xFF), modo);
@@ -270,6 +311,8 @@ void USART::print(byte dado, int modo) {
 			aux += 0x30;
 		}
 		sendByte(aux);
+	} else if (modo == CHAR) {
+		sendByte(dado);
 	}
 }
 
