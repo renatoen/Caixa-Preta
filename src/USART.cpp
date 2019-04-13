@@ -1,11 +1,14 @@
 #include "../headers/USART.h"
 
+/**
+ * Construtor default da classe.
+ */
 USART::USART() {
 
 }
 
 /**
- * Init da classe. Inicia uma comunicação serial em uma das portas do arduino
+ * Construtor da classe. Inicia uma comunicação serial em uma das portas do arduino
  * utilizando o baud rate informado
  * @param serialNumber qual porta serial será utilizada.
  * No mega pode ser 0, 1, 2 ou 3
@@ -123,7 +126,7 @@ void USART::print(char dado[]) {
 }
 
 /**
- * Imprime um char e pula uma linha
+ * Imprime uma string e pula uma linha
  * @param dado dado que será impresso
  */
 void USART::println(char dado[]) {
@@ -132,7 +135,7 @@ void USART::println(char dado[]) {
 }
 
 /**
- * Imprime em decimal com sinal, retirando os zeros à esquerda
+ * Imprime em decimal com sinal um long, retirando os zeros à esquerda
  * @param dado dado que será impresso
  */
 void USART::print(long dado) {
@@ -162,15 +165,7 @@ void USART::print(long dado) {
 }
 
 /**
- * Imprime em decimal com sinal, retirando os zeros à esquerda
- * @param dado dado que será impresso
- */
-void USART::print(int dado) {
-	print(long(dado));
-}
-
-/**
- * Imprime em decimal com sinal e pula uma linha
+ * Imprime em decimal com sinal um long e pula uma linha
  * @param dado dado que será impresso
  */
 void USART::println(long dado) {
@@ -179,7 +174,15 @@ void USART::println(long dado) {
 }
 
 /**
- * Imprime em decimal com sinal e pula uma linha
+ * Imprime em decimal com sinal um int, retirando os zeros à esquerda
+ * @param dado dado que será impresso
+ */
+void USART::print(int dado) {
+	print(long(dado));
+}
+
+/**
+ * Imprime em decimal com sinal um int e pula uma linha
  * @param dado dado que será impresso
  */
 void USART::println(int dado) {

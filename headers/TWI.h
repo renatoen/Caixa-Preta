@@ -20,31 +20,74 @@
 #define RX_DATA_NACK  0x58  //	Dado recebido e NACK gerado
 
 //	valor máximo do contador de timer
-#define MAX_CONT 1000 //colocar como variável
+#define MAX_CONT 1000
 
-#define REPEAT_START 10
+#define REPEAT_START 10 // valor máximo que o start deve ser reenviado em caso de falha
 
 class TWI {
 private:
-	uint16_t cont, numRepeatStart;
+	uint16_t cont;	/**< Contador para máximo de loops que o código deve esperar por resposta do MPU */
+	uint16_t numRepeatStart; /**< Contador do número de vezes que o start foi reenviado em caso de falha */
 
+	/**
+	 * Espera TWINT = 1. Espera incrementando um contador e quando chega no máximo
+	 * e TWINT ainda não é 1, retorna FALSE.
+	 * @return TRUE se TWINT = 1 e FALSE caso contrário
+	 */
 	bool waitTask();
 
 public:
+
+	/**
+	 * Construtor da classe. Define a frequência que vai ser trabalhada e o endereço
+	 * do escravo.
+	 * @param freq frequência utilizada
+	 */
 	TWI(int freq);
 
+	/**
+	 * Envia um sinal de start. Caso falhe, repete REPEAT_START vezes.
+	 * @return TRUE se start ocorreu e FALSE caso contrário
+	 */
 	bool sendStart();
 
+	/**
+	 * Envia um sinal de start repetido. Caso falhe, repete REPEAT_START vezes.
+	 * @return TRUE se start repetido ocorreu e FALSE caso contrário
+	 */
 	bool sendRepeatedStart();
 
+	/**
+	 * Envia um sinal de stop.
+	 */
 	void sendStop();
 
+	/**
+	 * Envia o endereço de leitura.
+	 * @param address endereço de leitura
+	 * @return TRUE se endereço foi enviado e FALSE caso contrário
+	 */
 	bool sendReadAddress(byte address);
 
+	/**
+	 * Envia o endereço de escrita.
+	 * @param address endereço de escrita
+	 * @return TRUE se endereço foi enviado e FALSE caso contrário
+	 */
 	bool sendWriteAddress(byte address);
 
+	/**
+	 * Envia um dado.
+	 * @param dado dado que vai ser enviado
+	 * @return TRUE se o dado foi enviado e FALSE caso contrário
+	 */
 	bool sendData(byte dado);
 
+	/**
+	 * Lê um dado.
+	 * @param ack determina se quer receber ACK (TRUE) ou NACK (FALSE)
+	 * @return dado lido
+	 */
 	uint8_t readData(bool ack);
 
 };

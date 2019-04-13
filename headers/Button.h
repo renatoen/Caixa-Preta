@@ -30,21 +30,55 @@
 class Button {
 private:
 
-	// variáveis
-	volatile byte sw_buf[SW_BUF_TAM];   // buffer para o teclado
-	volatile byte sw_v,sw_n,sw_1,sw_2;  // valor velho e valor novo da chave
-	volatile byte sw_pin, sw_pout;      // ponteiros (indexadores para buffer)
+	volatile byte sw_buf[SW_BUF_TAM];	/**< buffer para o teclado */
+	volatile byte sw_v;		/**< valor velho da chave */
+	volatile byte sw_n;		/**< valor novo da chave */
+	volatile byte sw_1;		/**< valor velho da chave */
+	volatile byte sw_2;		/**< valor novo da chave */
+	volatile byte sw_pin;	/**< ponteiro indexador para o início do buffer */
+	volatile byte sw_pout;	/**< ponteiro indexador para o final do buffer */
 
-	// métodos
+	/**
+	 * Retorna o código da chave acionada
+	 * @return código do botão que foi acionado
+	 */
 	byte demuxCode();
+
+	/**
+	 * Coloca uma chave no buffer
+	 * @param key chave que foi acionada e vai ser colocada no buffer
+	 * @return TRUE se sucesso e FALSE se a fila estiver cheia
+	 */
 	bool loadBuffer(char key);
+
+	/**
+	 * Inicialização do ADC que é usado na laeitura das chaves.
+	 * Modo Free Running e leitura apenas do ADCH
+	 */
 	void startADC();
+
+	/**
+	 * Zera o buffer do teclado e inicializa os ponteiros
+	 */
 	void clearBuffer();
 public:
 
-	// métodos
+	/**
+	 * Construtor da classe.
+	 * Inicializa os botões.
+	 */
 	Button();
+
+	/**
+	 * Lê as chaves e coloca no buffer. Monitora as chaves em 20 Hz
+	 */
 	void readButtons();
+
+	/**
+	 * Tira uma chave do buffer e retorna se houve sucesso
+	 * @param key ponteiro para a variável que vai receber o valor da chave acionada
+	 * @return TRUE se havia chave no buffer e FALSE se não havia chave no buffer
+	 */
 	bool readBuffer(char *key);
 };
 

@@ -1,0 +1,234 @@
+\hypertarget{class_u_s_a_r_t}{}\section{U\+S\+A\+RT Class Reference}
+\label{class_u_s_a_r_t}\index{U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_u_s_a_r_t_a538ccfb4c4ae821f4fd4e87afe9fd96e}{U\+S\+A\+RT} ()
+\item 
+\hyperlink{class_u_s_a_r_t_a680846cecf681784c7a113d145104c5d}{U\+S\+A\+RT} (int serial\+Number, long baud\+Rate)
+\item 
+byte \hyperlink{class_u_s_a_r_t_afdd6c6b8cc0b12375978e492f9eeefca}{read\+Byte} ()
+\item 
+void \hyperlink{class_u_s_a_r_t_aa1c1e5fef5153dd3d4d2794e16433b3f}{print} (char dado\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{class_u_s_a_r_t_a85c5f9ee155061a1c34bef668c7858e7}{print} (long dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_aaf26f0a495fa3248035bec99f6871969}{print} (int dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_a93d4b2375905a82d459bf243d336fbe8}{print} (double dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_ad80fac8322685697839dfb8a85d52d94}{print} (word dado, int modo=D\+EC)
+\item 
+void \hyperlink{class_u_s_a_r_t_a247454f341ef377b168436fca1490861}{print} (byte dado, int modo=D\+EC)
+\item 
+void \hyperlink{class_u_s_a_r_t_ab7a2d9febdda04636cf13ccc2d004475}{println} (char dado\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{class_u_s_a_r_t_af466ae5e7c9f85ed409274a15c08d69a}{println} (long dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_a4c59a4f57021fcf5bae5e8a3a963d4e3}{println} (int dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_a93e3e2c0822214f5cd9f3d65d87400ec}{println} (double dado)
+\item 
+void \hyperlink{class_u_s_a_r_t_ac554e6cd095025857ab747c63e407454}{println} (word dado, int modo=D\+EC)
+\item 
+void \hyperlink{class_u_s_a_r_t_ae6893c448241c72ddf6867034657c4c5}{println} (byte dado, int modo=D\+EC)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+S\+A\+R\+T()}{USART()}}]{\setlength{\rightskip}{0pt plus 5cm}U\+S\+A\+R\+T\+::\+U\+S\+A\+RT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a538ccfb4c4ae821f4fd4e87afe9fd96e}{}\label{class_u_s_a_r_t_a538ccfb4c4ae821f4fd4e87afe9fd96e}
+Construtor default da classe. \index{U\+S\+A\+RT@{U\+S\+A\+RT}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{U\+S\+A\+R\+T(int serial\+Number, long baud\+Rate)}{USART(int serialNumber, long baudRate)}}]{\setlength{\rightskip}{0pt plus 5cm}U\+S\+A\+R\+T\+::\+U\+S\+A\+RT (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number, }
+\item[{long}]{baud\+Rate}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a680846cecf681784c7a113d145104c5d}{}\label{class_u_s_a_r_t_a680846cecf681784c7a113d145104c5d}
+Construtor da classe. Inicia uma comunicação serial em uma das portas do arduino utilizando o baud rate informado 
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & qual porta serial será utilizada. No mega pode ser 0, 1, 2 ou 3 \\
+\hline
+{\em baud\+Rate} & baud Rate da comunicação. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(char dado[])}{print(char dado[])}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{char}]{dado\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_aa1c1e5fef5153dd3d4d2794e16433b3f}{}\label{class_u_s_a_r_t_aa1c1e5fef5153dd3d4d2794e16433b3f}
+Imprime uma string 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(long dado)}{print(long dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{long}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a85c5f9ee155061a1c34bef668c7858e7}{}\label{class_u_s_a_r_t_a85c5f9ee155061a1c34bef668c7858e7}
+Imprime em decimal com sinal um long, retirando os zeros à esquerda 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(int dado)}{print(int dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{int}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_aaf26f0a495fa3248035bec99f6871969}{}\label{class_u_s_a_r_t_aaf26f0a495fa3248035bec99f6871969}
+Imprime em decimal com sinal um int, retirando os zeros à esquerda 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(double dado)}{print(double dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{double}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a93d4b2375905a82d459bf243d336fbe8}{}\label{class_u_s_a_r_t_a93d4b2375905a82d459bf243d336fbe8}
+Imprime em double xx.\+xxxxxx 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(word dado, int modo=\+D\+E\+C)}{print(word dado, int modo=DEC)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{word}]{dado, }
+\item[{int}]{modo = {\ttfamily DEC}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_ad80fac8322685697839dfb8a85d52d94}{}\label{class_u_s_a_r_t_ad80fac8322685697839dfb8a85d52d94}
+Se o modo for decimal, imprime em decimal sem sinal um W16. Se o modo for hexadecimal, imprime em hexa um palavra de 16 bits. Possui como padrão o modo decimal. 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+{\em modo} & D\+EC para decimal e H\+EX para hexadecimal \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!print@{print}}
+\index{print@{print}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{print(byte dado, int modo=\+D\+E\+C)}{print(byte dado, int modo=DEC)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::print (
+\begin{DoxyParamCaption}
+\item[{byte}]{dado, }
+\item[{int}]{modo = {\ttfamily DEC}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a247454f341ef377b168436fca1490861}{}\label{class_u_s_a_r_t_a247454f341ef377b168436fca1490861}
+Se o modo for decimal, imprime em decimal sem sinal um byte retirando os zeros à esquerda. Se o modo for hexadecimal, imprime em Hexa um byte. Possui como padrão o modo decimal. 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+{\em modo} & D\+EC para decimal e H\+EX para hexadecimal \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(char dado[])}{println(char dado[])}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{char}]{dado\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_ab7a2d9febdda04636cf13ccc2d004475}{}\label{class_u_s_a_r_t_ab7a2d9febdda04636cf13ccc2d004475}
+Imprime uma string e pula uma linha 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(long dado)}{println(long dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{long}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_af466ae5e7c9f85ed409274a15c08d69a}{}\label{class_u_s_a_r_t_af466ae5e7c9f85ed409274a15c08d69a}
+Imprime em decimal com sinal um long e pula uma linha 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(int dado)}{println(int dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{int}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a4c59a4f57021fcf5bae5e8a3a963d4e3}{}\label{class_u_s_a_r_t_a4c59a4f57021fcf5bae5e8a3a963d4e3}
+Imprime em decimal com sinal um int e pula uma linha 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(double dado)}{println(double dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{double}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_a93e3e2c0822214f5cd9f3d65d87400ec}{}\label{class_u_s_a_r_t_a93e3e2c0822214f5cd9f3d65d87400ec}
+Imprime em double xx.\+xxxxxx e pula uma linha 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(word dado, int modo=\+D\+E\+C)}{println(word dado, int modo=DEC)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{word}]{dado, }
+\item[{int}]{modo = {\ttfamily DEC}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_ac554e6cd095025857ab747c63e407454}{}\label{class_u_s_a_r_t_ac554e6cd095025857ab747c63e407454}
+Se o modo for decimal, imprime em decimal sem sinal um W16 e pula uma linha. Se o modo for hexadecimal, imprime em hexa um palavra de 16 bits e pula uma linha. Possui como padrão o modo decimal. 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+{\em modo} & D\+EC para decimal e H\+EX para hexadecimal \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!println@{println}}
+\index{println@{println}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{println(byte dado, int modo=\+D\+E\+C)}{println(byte dado, int modo=DEC)}}]{\setlength{\rightskip}{0pt plus 5cm}void U\+S\+A\+R\+T\+::println (
+\begin{DoxyParamCaption}
+\item[{byte}]{dado, }
+\item[{int}]{modo = {\ttfamily DEC}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_ae6893c448241c72ddf6867034657c4c5}{}\label{class_u_s_a_r_t_ae6893c448241c72ddf6867034657c4c5}
+Se o modo for decimal, imprime em decimal sem sinal um byte retirando os zeros à esquerda e pula uma linha. Se o modo for hexadecimal, imprime em Hexa um byte e pula uma linha. Possui como padrão o modo decimal. 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que será impresso \\
+\hline
+{\em modo} & D\+EC para decimal e H\+EX para hexadecimal \\
+\hline
+\end{DoxyParams}
+\index{U\+S\+A\+RT@{U\+S\+A\+RT}!read\+Byte@{read\+Byte}}
+\index{read\+Byte@{read\+Byte}!U\+S\+A\+RT@{U\+S\+A\+RT}}
+\subsubsection[{\texorpdfstring{read\+Byte()}{readByte()}}]{\setlength{\rightskip}{0pt plus 5cm}byte U\+S\+A\+R\+T\+::read\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_u_s_a_r_t_afdd6c6b8cc0b12375978e492f9eeefca}{}\label{class_u_s_a_r_t_afdd6c6b8cc0b12375978e492f9eeefca}
+Lê um byte da porta serial. \begin{DoxyReturn}{Returns}
+byte lido 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/U\+S\+A\+R\+T.\+h\end{DoxyCompactItemize}

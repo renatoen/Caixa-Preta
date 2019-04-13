@@ -47,28 +47,110 @@
 
 class MPU {
 private:
-	// variáveis
-	int frequencia;
-	float giro_res, acel_res;
+
+	int frequencia;	/**< frequência da comunicação I2C do mpu */
+	float giro_res;	/**< resolução do giroscópio */
+	float acel_res;	/**< resolução do acelerômetro */
 
 public:
-	// variáveis
-	int axi,ayi,azi,tpi,gxi,gyi,gzi;      // leituras instantâneas do MPU
 
-	// métodos
+	int axi;	/**< leitura instântanea da aceleração no eixo x */
+	int ayi;	/**< leitura instântanea da aceleração no eixo y */
+	int azi;	/**< leitura instântanea da aceleração no eixo z */
+	int tpi;	/**< leitura instântanea da temperatura interna do MPU */
+	int gxi;	/**< leitura instântanea do giroscópio no eixo x */
+	int gyi;	/**< leitura instântanea do giroscópio no eixo y */
+	int gzi;	/**< leitura instântanea do giroscópio no eixo z */
+
+	/**
+	 * Construtor default da classe.
+	 */
 	MPU();
+
+	/**
+	 * Construtor da classe. Coloca o MPU num estado conhecido. Algumas operações
+	 * podem ser redundantes.
+	 * @param freq frequência utilizada
+	 */
 	MPU(int freq);
+
+	/**
+	 * Escrever em um registrador do MPU
+	 * @param reg registrador
+	 * @param dado dado que vai ser escrito
+	 * @return TRUE se dado foi escrito, FALSE caso contrário
+	 */
 	bool writeRegister(byte reg, byte dado);
+
+	/**
+	 * Ler um registrador do MPU
+	 * @param reg registrador
+	 * @return dado que foi lido
+	 */
 	byte readRegister(byte reg);
+
+	/**
+	 * Escrever um bloco de dados no MPU a partir de um registrador
+	 * @param reg registrador
+	 * @param dado bloco de dados que vai ser escrito
+	 * @param qtd tamanho do bloco de dados
+	 * @return TRUE se dados foram escritos, FALSE caso contrário
+	 */
 	bool writeBlockData(byte reg, byte* dado, byte qtd);
+
+	/**
+	 * Lê um bloco de dados no MPU a partir de um registrador
+	 * @param reg registrador
+	 * @param dado bloco de dados em que os dados da leitura serão armazenados
+	 * @param qtd tamanho do bloco de dados
+	 */
 	void readBlockData(byte reg, byte* dado, byte qtd);
+
+	/**
+	 * Lê o registrador WHO_AM_I
+	 * @return valor do registrador
+	 */
 	byte whoAmI();
+
+	/**
+	 * Acordar o MPU e programar para usar relógio Giro X
+	 */
 	void wakeUp();
+
+	/**
+	 * Dormir o MPU e programar para usar relógio Giro X
+	 */
 	void sleep();
+
+	/**
+	 * Seleciona Fundo de Escalas para o MPU
+	 * @param gfs FS do giroscópio
+	 * @param afs FS do acelerômetro
+	 */
 	void setScale(byte gfs, byte afs);
+
+	/**
+	 * Lê a média da aceleração, temperatura e giroscópio
+	 * @param rpt número de leituras que vai ser tirada a média
+	 */
 	void readAverageAccelTempGyros(word rpt);
+
+	/**
+	 * Lê a aceleração, temperatura e giroscópio
+	 */
 	void readAccelTempGyros();
+
+	/**
+	 * Faz um self test do MPU
+	 * @return TRUE se passar do teste, FALSE caso contrário
+	 */
 	bool selfTest();
+
+	/**
+	 * Calibra o acelerômetro e o giroscópio do MPU
+	 * @param bias
+	 * @param valor
+	 */
 	void calibrate(int16_t *bias, float  *valor);
 };
 

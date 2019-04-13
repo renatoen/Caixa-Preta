@@ -1,0 +1,315 @@
+\hypertarget{class_l_c_d}{}\section{L\+CD Class Reference}
+\label{class_l_c_d}\index{L\+CD@{L\+CD}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_l_c_d_a00bb2db1390721abc7b24ac4b8c276c8}{L\+CD} ()
+\item 
+void \hyperlink{class_l_c_d_abb7937561b3bc75fd672003b81e388f7}{start\+Config} ()
+\item 
+void \hyperlink{class_l_c_d_a9868c6740864f198778e24b1f38147b9}{caracter} (byte code, byte $\ast$vet)
+\item 
+void \hyperlink{class_l_c_d_a368ef1f6a659bb7a28b4dabc3ed66c93}{print\+Dec16} (word nr, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_a9081bd4c9f6e1cfe1aa855a2005eb101}{print\+Dec8} (byte nr, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_a66ca9248294d9ed3ac3db52c2389da7a}{print\+Hex16} (word nr, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_a088b602412fafc11266296b8537edc1f}{print\+Hex8} (byte nr, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_aed5147061cc9761230e2977a5de9fa5d}{print\+Char8} (byte nr, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_a47a75e256bcc0f76cdd75e5c425e2bf6}{load\+Buffer} (byte $\ast$vet, byte lin, byte col)
+\item 
+void \hyperlink{class_l_c_d_a3ec14c7f40b08492f65779cbd662e3d1}{load\+L\+CD} (byte lin, byte coli, byte colf)
+\item 
+void \hyperlink{class_l_c_d_a70a46c817aa34b2a91c153a3dd0e9591}{load\+Buffer\+White} ()
+\item 
+void \hyperlink{class_l_c_d_ae42ed5491b5e32a2e740d57aebe4e8dd}{cursor} (byte on)
+\item 
+void \hyperlink{class_l_c_d_a9be7dae5cf36e971cf40472fddb3a2bc}{command} (byte dado)
+\item 
+void \hyperlink{class_l_c_d_a02c39e2c9424ef4c5ec8a4d83c59b6e6}{print\+Char} (byte dado)
+\item 
+void \hyperlink{class_l_c_d_a124c2100ce0dded2a83f586fe618eee3}{set\+Cursor} (byte pos)
+\item 
+byte \hyperlink{class_l_c_d_a9285bcefcb08e96f0aaf7cad56a5b4e0}{read\+Address\+Counter} ()
+\item 
+bool \hyperlink{class_l_c_d_a9a83a13b931a2ccbb17c80a119869d24}{is\+Busy} ()
+\item 
+void \hyperlink{class_l_c_d_a3342a83c4cc8afa0da7c0ea8ef10d549}{back\+Light} (bool on)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+byte \hyperlink{class_l_c_d_a5768e304cd832c5ac495c805f1ef7de9}{lcd\+\_\+buffer} \mbox{[}4\mbox{]}\mbox{[}20\mbox{]}
+\item 
+volatile bool \hyperlink{class_l_c_d_ab8dc463b096981437ced6749c072b06c}{lcd\+\_\+flag0}
+\item 
+volatile bool \hyperlink{class_l_c_d_adc6d0cdd4dcb57a392daadbda71562de}{lcd\+\_\+flag1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{L\+CD@{L\+CD}!L\+CD@{L\+CD}}
+\index{L\+CD@{L\+CD}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{L\+C\+D()}{LCD()}}]{\setlength{\rightskip}{0pt plus 5cm}L\+C\+D\+::\+L\+CD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a00bb2db1390721abc7b24ac4b8c276c8}{}\label{class_l_c_d_a00bb2db1390721abc7b24ac4b8c276c8}
+Construtor da classe. Inicia os pinos. 
+
+\subsection{Member Function Documentation}
+\index{L\+CD@{L\+CD}!back\+Light@{back\+Light}}
+\index{back\+Light@{back\+Light}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{back\+Light(bool on)}{backLight(bool on)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::back\+Light (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a3342a83c4cc8afa0da7c0ea8ef10d549}{}\label{class_l_c_d_a3342a83c4cc8afa0da7c0ea8ef10d549}
+Acende e apaga o Back Light 
+\begin{DoxyParams}{Parameters}
+{\em on} & T\+R\+UE para ligar o back light e F\+A\+L\+SE para desligar o back light \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!caracter@{caracter}}
+\index{caracter@{caracter}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{caracter(byte code, byte $\ast$vet)}{caracter(byte code, byte *vet)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::caracter (
+\begin{DoxyParamCaption}
+\item[{byte}]{code, }
+\item[{byte $\ast$}]{vet}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a9868c6740864f198778e24b1f38147b9}{}\label{class_l_c_d_a9868c6740864f198778e24b1f38147b9}
+Cria um caracterer especial 
+\begin{DoxyParams}{Parameters}
+{\em code} & código do caracter \\
+\hline
+{\em vet} & vetor de 8 posições com o mapa de pontos \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!command@{command}}
+\index{command@{command}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{command(byte dado)}{command(byte dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::command (
+\begin{DoxyParamCaption}
+\item[{byte}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a9be7dae5cf36e971cf40472fddb3a2bc}{}\label{class_l_c_d_a9be7dae5cf36e971cf40472fddb3a2bc}
+Escrever um comando (instrução) no \hyperlink{class_l_c_d}{L\+CD} 
+\begin{DoxyParams}{Parameters}
+{\em dado} & instrução \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!cursor@{cursor}}
+\index{cursor@{cursor}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{cursor(byte on)}{cursor(byte on)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::cursor (
+\begin{DoxyParamCaption}
+\item[{byte}]{on}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_ae42ed5491b5e32a2e740d57aebe4e8dd}{}\label{class_l_c_d_ae42ed5491b5e32a2e740d57aebe4e8dd}
+Liga e desliga o cursor piscante 
+\begin{DoxyParams}{Parameters}
+{\em on} & ON para ligar o cursor e O\+FF para desligar o cursor \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!is\+Busy@{is\+Busy}}
+\index{is\+Busy@{is\+Busy}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{is\+Busy()}{isBusy()}}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+C\+D\+::is\+Busy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a9a83a13b931a2ccbb17c80a119869d24}{}\label{class_l_c_d_a9a83a13b931a2ccbb17c80a119869d24}
+Verifica se o \hyperlink{class_l_c_d}{L\+CD} está ocupado \begin{DoxyReturn}{Returns}
+T\+R\+UE se tiver ocupado e F\+A\+L\+SE se estiver livre 
+\end{DoxyReturn}
+\index{L\+CD@{L\+CD}!load\+Buffer@{load\+Buffer}}
+\index{load\+Buffer@{load\+Buffer}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{load\+Buffer(byte $\ast$vet, byte lin, byte col)}{loadBuffer(byte *vet, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::load\+Buffer (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{vet, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a47a75e256bcc0f76cdd75e5c425e2bf6}{}\label{class_l_c_d_a47a75e256bcc0f76cdd75e5c425e2bf6}
+Trasferir uma string para o lcd\+\_\+buffer. Transfere até encontrar o \char`\"{}\textbackslash{}0\char`\"{} 
+\begin{DoxyParams}{Parameters}
+{\em vet} & ponteiro para string \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!load\+Buffer\+White@{load\+Buffer\+White}}
+\index{load\+Buffer\+White@{load\+Buffer\+White}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{load\+Buffer\+White()}{loadBufferWhite()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::load\+Buffer\+White (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a70a46c817aa34b2a91c153a3dd0e9591}{}\label{class_l_c_d_a70a46c817aa34b2a91c153a3dd0e9591}
+Colocar branco (0x20) em todo o buffer do \hyperlink{class_l_c_d}{L\+CD} \index{L\+CD@{L\+CD}!load\+L\+CD@{load\+L\+CD}}
+\index{load\+L\+CD@{load\+L\+CD}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{load\+L\+C\+D(byte lin, byte coli, byte colf)}{loadLCD(byte lin, byte coli, byte colf)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::load\+L\+CD (
+\begin{DoxyParamCaption}
+\item[{byte}]{lin, }
+\item[{byte}]{coli, }
+\item[{byte}]{colf}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a3ec14c7f40b08492f65779cbd662e3d1}{}\label{class_l_c_d_a3ec14c7f40b08492f65779cbd662e3d1}
+Trasferir do lcd\+\_\+buffer para o \hyperlink{class_l_c_d}{L\+CD}. Só transfere uma linha 
+\begin{DoxyParams}{Parameters}
+{\em lin} & linha de início \\
+\hline
+{\em coli} & coluna de início \\
+\hline
+{\em colf} & coluna final (inclusa) \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Char@{print\+Char}}
+\index{print\+Char@{print\+Char}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Char(byte dado)}{printChar(byte dado)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Char (
+\begin{DoxyParamCaption}
+\item[{byte}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a02c39e2c9424ef4c5ec8a4d83c59b6e6}{}\label{class_l_c_d_a02c39e2c9424ef4c5ec8a4d83c59b6e6}
+Escrever uma caracter no \hyperlink{class_l_c_d}{L\+CD} 
+\begin{DoxyParams}{Parameters}
+{\em dado} & caracter \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Char8@{print\+Char8}}
+\index{print\+Char8@{print\+Char8}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Char8(byte nr, byte lin, byte col)}{printChar8(byte nr, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Char8 (
+\begin{DoxyParamCaption}
+\item[{byte}]{nr, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_aed5147061cc9761230e2977a5de9fa5d}{}\label{class_l_c_d_aed5147061cc9761230e2977a5de9fa5d}
+Imprime uma letra em 8 bits 
+\begin{DoxyParams}{Parameters}
+{\em nr} & \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Dec16@{print\+Dec16}}
+\index{print\+Dec16@{print\+Dec16}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Dec16(word nr, byte lin, byte col)}{printDec16(word nr, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Dec16 (
+\begin{DoxyParamCaption}
+\item[{word}]{nr, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a368ef1f6a659bb7a28b4dabc3ed66c93}{}\label{class_l_c_d_a368ef1f6a659bb7a28b4dabc3ed66c93}
+Imprime um decimal de 16 bits 
+\begin{DoxyParams}{Parameters}
+{\em nr} & \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Dec8@{print\+Dec8}}
+\index{print\+Dec8@{print\+Dec8}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Dec8(byte nr, byte lin, byte col)}{printDec8(byte nr, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Dec8 (
+\begin{DoxyParamCaption}
+\item[{byte}]{nr, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a9081bd4c9f6e1cfe1aa855a2005eb101}{}\label{class_l_c_d_a9081bd4c9f6e1cfe1aa855a2005eb101}
+Imprime um decimal de 8 bits 
+\begin{DoxyParams}{Parameters}
+{\em nr} & \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Hex16@{print\+Hex16}}
+\index{print\+Hex16@{print\+Hex16}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Hex16(word nr, byte lin, byte col)}{printHex16(word nr, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Hex16 (
+\begin{DoxyParamCaption}
+\item[{word}]{nr, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a66ca9248294d9ed3ac3db52c2389da7a}{}\label{class_l_c_d_a66ca9248294d9ed3ac3db52c2389da7a}
+Imprime um hexadecimal de 16 bits 
+\begin{DoxyParams}{Parameters}
+{\em nr} & \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!print\+Hex8@{print\+Hex8}}
+\index{print\+Hex8@{print\+Hex8}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{print\+Hex8(byte nr, byte lin, byte col)}{printHex8(byte nr, byte lin, byte col)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::print\+Hex8 (
+\begin{DoxyParamCaption}
+\item[{byte}]{nr, }
+\item[{byte}]{lin, }
+\item[{byte}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a088b602412fafc11266296b8537edc1f}{}\label{class_l_c_d_a088b602412fafc11266296b8537edc1f}
+Imprime um hexadecimal de 8 bits 
+\begin{DoxyParams}{Parameters}
+{\em nr} & \\
+\hline
+{\em lin} & linha de início \\
+\hline
+{\em col} & coluna de início \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!read\+Address\+Counter@{read\+Address\+Counter}}
+\index{read\+Address\+Counter@{read\+Address\+Counter}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{read\+Address\+Counter()}{readAddressCounter()}}]{\setlength{\rightskip}{0pt plus 5cm}byte L\+C\+D\+::read\+Address\+Counter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a9285bcefcb08e96f0aaf7cad56a5b4e0}{}\label{class_l_c_d_a9285bcefcb08e96f0aaf7cad56a5b4e0}
+Ler contador de endereços \begin{DoxyReturn}{Returns}
+Contador de endereços 
+\end{DoxyReturn}
+\index{L\+CD@{L\+CD}!set\+Cursor@{set\+Cursor}}
+\index{set\+Cursor@{set\+Cursor}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{set\+Cursor(byte pos)}{setCursor(byte pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::set\+Cursor (
+\begin{DoxyParamCaption}
+\item[{byte}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_a124c2100ce0dded2a83f586fe618eee3}{}\label{class_l_c_d_a124c2100ce0dded2a83f586fe618eee3}
+Posicionar o cursor 
+\begin{DoxyParams}{Parameters}
+{\em pos} & posição \\
+\hline
+\end{DoxyParams}
+\index{L\+CD@{L\+CD}!start\+Config@{start\+Config}}
+\index{start\+Config@{start\+Config}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{start\+Config()}{startConfig()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+C\+D\+::start\+Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_c_d_abb7937561b3bc75fd672003b81e388f7}{}\label{class_l_c_d_abb7937561b3bc75fd672003b81e388f7}
+Configura o \hyperlink{class_l_c_d}{L\+CD} para começar o uso 
+
+\subsection{Member Data Documentation}
+\index{L\+CD@{L\+CD}!lcd\+\_\+buffer@{lcd\+\_\+buffer}}
+\index{lcd\+\_\+buffer@{lcd\+\_\+buffer}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{lcd\+\_\+buffer}{lcd_buffer}}]{\setlength{\rightskip}{0pt plus 5cm}byte L\+C\+D\+::lcd\+\_\+buffer\mbox{[}4\mbox{]}\mbox{[}20\mbox{]}}\hypertarget{class_l_c_d_a5768e304cd832c5ac495c805f1ef7de9}{}\label{class_l_c_d_a5768e304cd832c5ac495c805f1ef7de9}
+Buffer para o \hyperlink{class_l_c_d}{L\+CD} \mbox{[}lin\mbox{]}\mbox{[}col\mbox{]} terminar cada linha com Zero \index{L\+CD@{L\+CD}!lcd\+\_\+flag0@{lcd\+\_\+flag0}}
+\index{lcd\+\_\+flag0@{lcd\+\_\+flag0}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{lcd\+\_\+flag0}{lcd_flag0}}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool L\+C\+D\+::lcd\+\_\+flag0}\hypertarget{class_l_c_d_ab8dc463b096981437ced6749c072b06c}{}\label{class_l_c_d_ab8dc463b096981437ced6749c072b06c}
+Flag para indicar que a linha 0 deve atualizar \index{L\+CD@{L\+CD}!lcd\+\_\+flag1@{lcd\+\_\+flag1}}
+\index{lcd\+\_\+flag1@{lcd\+\_\+flag1}!L\+CD@{L\+CD}}
+\subsubsection[{\texorpdfstring{lcd\+\_\+flag1}{lcd_flag1}}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool L\+C\+D\+::lcd\+\_\+flag1}\hypertarget{class_l_c_d_adc6d0cdd4dcb57a392daadbda71562de}{}\label{class_l_c_d_adc6d0cdd4dcb57a392daadbda71562de}
+Flag para indicar que a linha 1 deve atualizar 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/L\+C\+D.\+h\end{DoxyCompactItemize}

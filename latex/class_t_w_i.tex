@@ -1,0 +1,131 @@
+\hypertarget{class_t_w_i}{}\section{T\+WI Class Reference}
+\label{class_t_w_i}\index{T\+WI@{T\+WI}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_t_w_i_a055a0378dde5773bf5909055d05b735b}{T\+WI} (int freq)
+\item 
+bool \hyperlink{class_t_w_i_ac9cb5ceb7c069342e6c106117fa50c92}{send\+Start} ()
+\item 
+bool \hyperlink{class_t_w_i_a88fe10bf711a21b84b1e688e8c9ad726}{send\+Repeated\+Start} ()
+\item 
+void \hyperlink{class_t_w_i_a34828bccdff0c441ffbb1d57e724d7d0}{send\+Stop} ()
+\item 
+bool \hyperlink{class_t_w_i_a4f26411a5da8111232c91c70f06048cd}{send\+Read\+Address} (byte address)
+\item 
+bool \hyperlink{class_t_w_i_aada3a61390b78a34c51565ecf534e0b4}{send\+Write\+Address} (byte address)
+\item 
+bool \hyperlink{class_t_w_i_a90bcdbb964dc3876cf8876d8ba579964}{send\+Data} (byte dado)
+\item 
+uint8\+\_\+t \hyperlink{class_t_w_i_ae3e9af998955b0c875521e713a68935a}{read\+Data} (bool ack)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+WI@{T\+WI}!T\+WI@{T\+WI}}
+\index{T\+WI@{T\+WI}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{T\+W\+I(int freq)}{TWI(int freq)}}]{\setlength{\rightskip}{0pt plus 5cm}T\+W\+I\+::\+T\+WI (
+\begin{DoxyParamCaption}
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_a055a0378dde5773bf5909055d05b735b}{}\label{class_t_w_i_a055a0378dde5773bf5909055d05b735b}
+Construtor da classe. Define a frequência que vai ser trabalhada e o endereço do escravo. 
+\begin{DoxyParams}{Parameters}
+{\em freq} & frequência utilizada \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{T\+WI@{T\+WI}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{read\+Data(bool ack)}{readData(bool ack)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t T\+W\+I\+::read\+Data (
+\begin{DoxyParamCaption}
+\item[{bool}]{ack}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_ae3e9af998955b0c875521e713a68935a}{}\label{class_t_w_i_ae3e9af998955b0c875521e713a68935a}
+Lê um dado. 
+\begin{DoxyParams}{Parameters}
+{\em ack} & determina se quer receber A\+CK (T\+R\+UE) ou N\+A\+CK (F\+A\+L\+SE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dado lido 
+\end{DoxyReturn}
+\index{T\+WI@{T\+WI}!send\+Data@{send\+Data}}
+\index{send\+Data@{send\+Data}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Data(byte dado)}{sendData(byte dado)}}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+W\+I\+::send\+Data (
+\begin{DoxyParamCaption}
+\item[{byte}]{dado}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_a90bcdbb964dc3876cf8876d8ba579964}{}\label{class_t_w_i_a90bcdbb964dc3876cf8876d8ba579964}
+Envia um dado. 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado que vai ser enviado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se o dado foi enviado e F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{T\+WI@{T\+WI}!send\+Read\+Address@{send\+Read\+Address}}
+\index{send\+Read\+Address@{send\+Read\+Address}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Read\+Address(byte address)}{sendReadAddress(byte address)}}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+W\+I\+::send\+Read\+Address (
+\begin{DoxyParamCaption}
+\item[{byte}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_a4f26411a5da8111232c91c70f06048cd}{}\label{class_t_w_i_a4f26411a5da8111232c91c70f06048cd}
+Envia o endereço de leitura. 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço de leitura \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se endereço foi enviado e F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{T\+WI@{T\+WI}!send\+Repeated\+Start@{send\+Repeated\+Start}}
+\index{send\+Repeated\+Start@{send\+Repeated\+Start}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Repeated\+Start()}{sendRepeatedStart()}}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+W\+I\+::send\+Repeated\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_a88fe10bf711a21b84b1e688e8c9ad726}{}\label{class_t_w_i_a88fe10bf711a21b84b1e688e8c9ad726}
+Envia um sinal de start repetido. Caso falhe, repete R\+E\+P\+E\+A\+T\+\_\+\+S\+T\+A\+RT vezes. \begin{DoxyReturn}{Returns}
+T\+R\+UE se start repetido ocorreu e F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{T\+WI@{T\+WI}!send\+Start@{send\+Start}}
+\index{send\+Start@{send\+Start}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Start()}{sendStart()}}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+W\+I\+::send\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_ac9cb5ceb7c069342e6c106117fa50c92}{}\label{class_t_w_i_ac9cb5ceb7c069342e6c106117fa50c92}
+Envia um sinal de start. Caso falhe, repete R\+E\+P\+E\+A\+T\+\_\+\+S\+T\+A\+RT vezes. \begin{DoxyReturn}{Returns}
+T\+R\+UE se start ocorreu e F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{T\+WI@{T\+WI}!send\+Stop@{send\+Stop}}
+\index{send\+Stop@{send\+Stop}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Stop()}{sendStop()}}]{\setlength{\rightskip}{0pt plus 5cm}void T\+W\+I\+::send\+Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_a34828bccdff0c441ffbb1d57e724d7d0}{}\label{class_t_w_i_a34828bccdff0c441ffbb1d57e724d7d0}
+Envia um sinal de stop. \index{T\+WI@{T\+WI}!send\+Write\+Address@{send\+Write\+Address}}
+\index{send\+Write\+Address@{send\+Write\+Address}!T\+WI@{T\+WI}}
+\subsubsection[{\texorpdfstring{send\+Write\+Address(byte address)}{sendWriteAddress(byte address)}}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+W\+I\+::send\+Write\+Address (
+\begin{DoxyParamCaption}
+\item[{byte}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{class_t_w_i_aada3a61390b78a34c51565ecf534e0b4}{}\label{class_t_w_i_aada3a61390b78a34c51565ecf534e0b4}
+Envia o endereço de escrita. 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço de escrita \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se endereço foi enviado e F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/T\+W\+I.\+h\end{DoxyCompactItemize}

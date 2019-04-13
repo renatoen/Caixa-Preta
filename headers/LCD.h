@@ -36,41 +36,177 @@
 class LCD {
 private:
 
-	// métodos
+	/**
+	 * Define direção dos pinos e inicializa LCD
+	 */
 	void initPins();
+
+	/**
+	 * Modifica RS e RW
+	 * @param rs TRUE se RS = 1, FALSE se RS = 0
+	 @ @param rw TRUE se RW = 1, FALSE se RW = 0
+	 */
 	void setRsAndRw(bool rs, bool rw);
+
+	/**
+	 * Modifica o sentido do barramento. Como saída, zera os valores nos pinos.
+	 * Como entrada, coloca um resistor de pull up.
+	 * @param direction OUTPUT para deixar pinos como saída e INPUT para deixar pinos
+	 * como entrada
+	 */
 	void setBusMode(byte direction);
+
+	/**
+	 * Lê um byte do LCD
+	 * @return byte que foi lido
+	 */
 	byte readByte();
+
+	/**
+	 * Lê um nibble do LCD (xxxx 0000)
+	 * @return nibble que foi lido
+	 */
 	byte readNibble();
+
+	/**
+	 * Envia um byte para o lcd
+	 * @param dado byte que vai ser enviado
+	 */
 	void writeByte(byte dado);
+
+	/**
+	 * Envia um nibble e pulsa E
+	 * @param nib nibble que vai ser enviado
+	 */
 	void writeNibble(byte nib);
 
 public:
 
-	// variáveis
-	byte lcd_buffer[4][20];  //Buffer para o LCD [lin][col] terminar cada linha com Zero
-	volatile bool lcd_flag0,lcd_flag1,lcd_flag2,lcd_flag3;  //Flags para indicar qual linha atualizar
+	byte lcd_buffer[4][20];  /**< Buffer para o LCD [lin][col] terminar cada linha com Zero */
+	volatile bool lcd_flag0;  /**< Flag para indicar que a linha 0 deve atualizar */
+	volatile bool lcd_flag1; /**< Flag para indicar que a linha 1 deve atualizar */
 
-	// init
+	/**
+	 * Construtor da classe.
+	 * Inicia os pinos.
+	 */
 	LCD();
 
-	// métodos
+	/**
+	 * Configura o LCD para começar o uso
+	 */
 	void startConfig();
+
+	/**
+	 * Cria um caracterer especial
+	 * @param code código do caracter
+	 * @param vet vetor de 8 posições com o mapa de pontos
+	 */
 	void caracter(byte code, byte *vet);
+
+	/**
+	 * Imprime um decimal de 16 bits
+	 * @param nr
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void printDec16(word nr, byte lin, byte col);
+
+	/**
+	 * Imprime um decimal de 8 bits
+	 * @param nr
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void printDec8(byte nr, byte lin, byte col);
+
+	/**
+	 * Imprime um hexadecimal de 16 bits
+	 * @param nr
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void printHex16(word nr, byte lin, byte col);
+
+	/**
+	 * Imprime um hexadecimal de 8 bits
+	 * @param nr
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void printHex8(byte nr, byte lin, byte col);
+
+	/**
+	 * Imprime uma letra em 8 bits
+	 * @param nr
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void printChar8(byte nr, byte lin, byte col);
+
+	/**
+	 * Trasferir uma string para o lcd_buffer.
+	 * Transfere até encontrar o "\0"
+	 * @param vet ponteiro para string
+	 * @param lin linha de início
+	 * @param col coluna de início
+	 */
 	void loadBuffer(byte *vet, byte lin, byte col);
+
+	/**
+	 * Trasferir do lcd_buffer para o LCD.
+	 * Só transfere uma linha
+	 * @param lin linha de início
+	 * @param coli coluna de início
+	 * @param colf coluna final (inclusa)
+	 */
 	void loadLCD(byte lin, byte coli, byte colf);
+
+	/**
+	 * Colocar branco (0x20) em todo o buffer do LCD
+	 */
 	void loadBufferWhite();
+
+	/**
+	 * Liga e desliga o cursor piscante
+	 * @param on ON para ligar o cursor e OFF para desligar o cursor
+	 */
 	void cursor(byte on);
+
+	/**
+	 * Escrever um comando (instrução) no LCD
+	 * @param dado instrução
+	 */
 	void command(byte dado);
+
+	/**
+	 * Escrever uma caracter no LCD
+	 * @param dado caracter
+	 */
 	void printChar(byte dado);
+
+	/**
+	 * Posicionar o cursor
+	 * @param pos posição
+	 */
 	void setCursor(byte pos);
+
+	/**
+	 * Ler contador de endereços
+	 * @return Contador de endereços
+	 */
 	byte readAddressCounter();
+
+	/**
+	 * Verifica se o LCD está ocupado
+	 * @return TRUE se tiver ocupado e FALSE se estiver livre
+	 */
 	bool isBusy();
+
+	/**
+	 * Acende e apaga o Back Light
+	 * @param on TRUE para ligar o back light e FALSE para desligar o back light
+	 */
 	void backLight(bool on);
 
 };

@@ -1,7 +1,7 @@
 #include "../headers/Leds.h"
 
 /**
- * Init da classe.
+ * Construtor da classe.
  * Inicia as portas dos Leds como saída e os desliga.
  */
 Leds::Leds() {

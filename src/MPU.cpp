@@ -1,11 +1,14 @@
 #include "../headers/MPU.h"
 
+/**
+ * Construtor default da classe.
+ */
 MPU::MPU() {
 
 }
 
 /**
- * Init da classe. Coloca o MPU num estado conhecido. Algumas operações
+ * Construtor da classe. Coloca o MPU num estado conhecido. Algumas operações
  * podem ser redundantes.
  * @param freq frequência utilizada
  */
@@ -191,6 +194,7 @@ void MPU::readBlockData(byte reg, byte* dado, byte qtd) {
 	}
 
 }
+
 /**
  * Lê o registrador WHO_AM_I
  * @return valor do registrador

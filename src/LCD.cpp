@@ -1,7 +1,7 @@
 #include "../headers/LCD.h"
 
 /**
- * Init da classe.
+ * Construtor da classe.
  * Inicia os pinos.
  */
 LCD::LCD() {
@@ -174,8 +174,6 @@ void LCD::loadBuffer(byte *vet, byte lin, byte col) {
   	switch(lin){
     	case 0: lcd_flag0 = true;  break;
     	case 1: lcd_flag1 = true;  break;
-    	case 2: lcd_flag2 = true;  break;
-    	case 3: lcd_flag3 = true;  break;
     	default:  break;
   	}
   	j = 0;
@@ -214,7 +212,7 @@ void LCD::loadBufferWhite() {
     	for (col = 0; col < LCD_COL; col++)
       		lcd_buffer[lin][col] = 0x20;
 
-  	lcd_flag0 = lcd_flag1 = lcd_flag2 = lcd_flag3 = true;
+  	lcd_flag0 = lcd_flag1 = true;
 }
 
 /**

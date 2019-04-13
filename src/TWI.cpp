@@ -1,9 +1,8 @@
 #include "../headers/TWI.h"
 
 /**
- * Init da classe. Define a frequência que vai ser trabalhada e o endereço
+ * Construtor da classe. Define a frequência que vai ser trabalhada e o endereço
  * do escravo.
- * @param address endereço do escravo
  * @param freq frequência utilizada
  */
 TWI::TWI(int freq) {

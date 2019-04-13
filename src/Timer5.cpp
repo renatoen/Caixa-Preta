@@ -4,9 +4,10 @@ LCD* lcd;
 Button* btn;
 
 /**
- * Init da classe.
+ * Construtor da classe.
  * Inicia os parâmetros do timer 5 e guarda a referencia da classe do LCD
  * @param initLCD endereço da classe que cuida do LCD
+ * @param initBtn endereço da classe que cuida dos botões
  */
 Timer5::Timer5(LCD* initLCD, Button* initBtn) {
 	lcd = initLCD;
@@ -36,16 +37,6 @@ ISR(TIMER5_COMPA_vect){
   	if (lcd->lcd_flag1 == true){
 		lcd->loadLCD(1,0,19);
 		lcd->lcd_flag1 = false;
-	}
-
-  	if (lcd->lcd_flag2 == true){
-		lcd->loadLCD(2,0,19);
-		lcd->lcd_flag2 = false;
-	}
-
-  	if (lcd->lcd_flag3 == true){
-		lcd->loadLCD(3,0,19);
-		lcd->lcd_flag3 = false;
 	}
 
 	// Botões

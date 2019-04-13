@@ -1,0 +1,51 @@
+\hypertarget{class_button}{}\section{Button Class Reference}
+\label{class_button}\index{Button@{Button}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_button_a3b36df1ae23c58aedb9e15a713159459}{Button} ()
+\item 
+void \hyperlink{class_button_a01a47c09c53b9fd4b635e337aebf76be}{read\+Buttons} ()
+\item 
+bool \hyperlink{class_button_ac0663845722d920a837d5fbd38b794df}{read\+Buffer} (char $\ast$key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\subsubsection[{\texorpdfstring{Button()}{Button()}}]{\setlength{\rightskip}{0pt plus 5cm}Button\+::\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_button_a3b36df1ae23c58aedb9e15a713159459}{}\label{class_button_a3b36df1ae23c58aedb9e15a713159459}
+Construtor da classe. Inicializa os botões. 
+
+\subsection{Member Function Documentation}
+\index{Button@{Button}!read\+Buffer@{read\+Buffer}}
+\index{read\+Buffer@{read\+Buffer}!Button@{Button}}
+\subsubsection[{\texorpdfstring{read\+Buffer(char $\ast$key)}{readBuffer(char *key)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Button\+::read\+Buffer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{class_button_ac0663845722d920a837d5fbd38b794df}{}\label{class_button_ac0663845722d920a837d5fbd38b794df}
+Tira uma chave do buffer e retorna se houve sucesso 
+\begin{DoxyParams}{Parameters}
+{\em key} & ponteiro para a variável que vai receber o valor da chave acionada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se havia chave no buffer e F\+A\+L\+SE se não havia chave no buffer 
+\end{DoxyReturn}
+\index{Button@{Button}!read\+Buttons@{read\+Buttons}}
+\index{read\+Buttons@{read\+Buttons}!Button@{Button}}
+\subsubsection[{\texorpdfstring{read\+Buttons()}{readButtons()}}]{\setlength{\rightskip}{0pt plus 5cm}void Button\+::read\+Buttons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_button_a01a47c09c53b9fd4b635e337aebf76be}{}\label{class_button_a01a47c09c53b9fd4b635e337aebf76be}
+Lê as chaves e coloca no buffer. Monitora as chaves em 20 Hz 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/Button.\+h\end{DoxyCompactItemize}

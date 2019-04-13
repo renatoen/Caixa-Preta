@@ -28,11 +28,39 @@ class Leds {
 private:
 
 public:
+
+	/**
+	 * Construtor da classe.
+	 * Inicia as portas dos Leds como saída e os desliga.
+	 */
 	Leds();
+
+	/**
+	 * Liga, desliga ou troca o estado do led verde
+	 * @param on ON para ligar, OFF para desligar e TOGGLE para trocar o estado
+	 */
 	void green(byte on);
+
+	/**
+	 * Liga, desliga ou troca o estado do led amarelo
+	 * @param on ON para ligar, OFF para desligar e TOGGLE para trocar o estado
+	 */
 	void yellow(byte on);
+
+	/**
+	 * Liga, desliga ou troca o estado do led vermelho
+	 * @param on ON para ligar, OFF para desligar e TOGGLE para trocar o estado
+	 */
 	void red(byte on);
+
+	/**
+	 * Desliga todos os leds
+	 */
 	void turnOffAll();
+
+	/**
+	 * Liga todos os leds
+	 */
 	void turnOnAll();
 };
 

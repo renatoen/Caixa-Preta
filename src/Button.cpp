@@ -1,7 +1,7 @@
 #include "../headers/Button.h"
 
 /**
- * Init da classe.
+ * Construtor da classe.
  * Inicializa os botões.
  */
 Button::Button() {
@@ -15,11 +15,11 @@ Button::Button() {
  */
 void Button::readButtons() {
   	sw_2 = this->demuxCode();
-  	if (sw_2 != SW_NAOSEI){
-    	if (sw_1 == sw_2){
+  	if (sw_2 != SW_NAOSEI) {
+    	if (sw_1 == sw_2) {
       		sw_n = sw_2;
-      		if (sw_v != sw_n){
-        		if (sw_v == SW_NADA){
+      		if (sw_v != sw_n) {
+        		if (sw_v == SW_NADA) {
 					sw_v = sw_n;
 					this->loadBuffer(sw_n);
 				}else {
