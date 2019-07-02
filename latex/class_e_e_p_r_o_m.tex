@@ -1,0 +1,276 @@
+\section{E\+E\+P\+R\+OM Class Reference}
+\label{class_e_e_p_r_o_m}\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf E\+E\+P\+R\+OM} ()
+\item 
+{\bf E\+E\+P\+R\+OM} (uint8\+\_\+t frequencia, bool byte\+A1, bool byte\+A0)
+\item 
+uint8\+\_\+t {\bf read\+Byte} ()
+\item 
+uint32\+\_\+t {\bf read} (const void $\ast$data, uint32\+\_\+t num\+Bytes)
+\item 
+uint32\+\_\+t {\bf read} (uint32\+\_\+t address, const void $\ast$data, uint32\+\_\+t num\+Bytes)
+\item 
+bool {\bf write\+Byte} (uint8\+\_\+t data)
+\item 
+uint32\+\_\+t {\bf write} (const void $\ast$data, uint32\+\_\+t num\+Bytes)
+\item 
+uint32\+\_\+t {\bf write} (uint32\+\_\+t address, const void $\ast$data, uint32\+\_\+t num\+Bytes)
+\item 
+float {\bf read\+Float} ()
+\item 
+bool {\bf write\+Float} (float data)
+\item 
+uint32\+\_\+t {\bf read\+U\+Int} ()
+\item 
+bool {\bf write\+U\+Int} (uint32\+\_\+t data)
+\item 
+int32\+\_\+t {\bf read\+Int} ()
+\item 
+bool {\bf write\+Int} (int32\+\_\+t data)
+\item 
+uint32\+\_\+t {\bf get\+Position} ()
+\item 
+bool {\bf set\+Position} (uint32\+\_\+t position)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{E\+E\+P\+R\+O\+M()}]{\setlength{\rightskip}{0pt plus 5cm}E\+E\+P\+R\+O\+M\+::\+E\+E\+P\+R\+OM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a025ff5824e686e9c55ba5b46923f99d6}
+Construtor padrão da classe \index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{E\+E\+P\+R\+O\+M(uint8\+\_\+t frequencia, bool byte\+A1, bool byte\+A0)}]{\setlength{\rightskip}{0pt plus 5cm}E\+E\+P\+R\+O\+M\+::\+E\+E\+P\+R\+OM (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{frequencia, }
+\item[{bool}]{byte\+A1, }
+\item[{bool}]{byte\+A0}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_ad0e017278b98f51680c23de3c5e1540a}
+Construtor da classe. Recebe a frequência da comunicação \doxyref{T\+WI}{p.}{class_t_w_i} e os bytes A0 e A1 do seletor do barramento da \doxyref{E\+E\+P\+R\+OM}{p.}{class_e_e_p_r_o_m}. Inicializa contadores da classe da posição da \doxyref{E\+E\+P\+R\+OM}{p.}{class_e_e_p_r_o_m}. Inicializa também o endereço do chip 
+\begin{DoxyParams}{Parameters}
+{\em frequencia} & frequencia do \doxyref{T\+WI}{p.}{class_t_w_i} \\
+\hline
+{\em byte\+A1} & M\+SB do chip selector do barramento da eeprom \\
+\hline
+{\em byte\+A0} & L\+SB do chip selector do barramento da eeprom \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{get\+Position()}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a46d63de36dc86a48719e82123414d1a2}
+Pega a posição/endereço que a classe está utilizando para fazer as operações \begin{DoxyReturn}{Returns}
+posição/endereço atual 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read@{read}}
+\index{read@{read}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read(const void $\ast$data, uint32\+\_\+t num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::read (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a5236bb5a33afddb0e752bda7fd0f454f}
+Lê dados da memória utilizando como endereço o local atual na memória, definido pelo contador interno da classe 
+\begin{DoxyParams}{Parameters}
+{\em data} & valor que foi lido \\
+\hline
+{\em num\+Bytes} & número de bytes que serão lidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+número de bytes efetivamente lidos 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read@{read}}
+\index{read@{read}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read(uint32\+\_\+t address, const void $\ast$data, uint32\+\_\+t num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::read (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{const void $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a644a1ba25faedcfb865ff8c834b5c6c7}
+Lê dados da memória. Se a leitura passar por mais de 2 páginas, divide as leituras. 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço de 17 bits em que vai ser escrito o dado \\
+\hline
+{\em data} & valor que foi lido \\
+\hline
+{\em num\+Bytes} & número de bytes que serão lidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+número de bytes efetivamente lidos 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read\+Byte@{read\+Byte}}
+\index{read\+Byte@{read\+Byte}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t E\+E\+P\+R\+O\+M\+::read\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_ab8562d9825884f8153c0e3dc7f7e2f52}
+Lê um byte da memória utilizando como endereço o local atual na memória, definido pelo contador interno da classe \begin{DoxyReturn}{Returns}
+valor do byte lido 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read\+Float@{read\+Float}}
+\index{read\+Float@{read\+Float}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read\+Float()}]{\setlength{\rightskip}{0pt plus 5cm}float E\+E\+P\+R\+O\+M\+::read\+Float (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_add0c9c7dfe75f931c86c836b0cb6d58e}
+Lê um float da memória \begin{DoxyReturn}{Returns}
+valor do float ou N\+AN se inválido 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read\+Int@{read\+Int}}
+\index{read\+Int@{read\+Int}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read\+Int()}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t E\+E\+P\+R\+O\+M\+::read\+Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_abbd817956b022b6245be144e6560019c}
+Lê um inteiro da memória \begin{DoxyReturn}{Returns}
+valor do inteiro 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!read\+U\+Int@{read\+U\+Int}}
+\index{read\+U\+Int@{read\+U\+Int}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{read\+U\+Int()}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::read\+U\+Int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_aaf01f52820f292bc2ad5cb8049d59780}
+Lê um unsigned int da memória \begin{DoxyReturn}{Returns}
+valor do unsigned int 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{set\+Position(uint32\+\_\+t position)}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+E\+P\+R\+O\+M\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{position}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a09c3e828434d23edd07516e9a2bd369e}
+Define a posição/endereço que a classe vai utilizar para fazer as operações 
+\begin{DoxyParams}{Parameters}
+{\em position} & nova posição/endereço \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se operação ocorreu com sucesso, F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write@{write}}
+\index{write@{write}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write(const void $\ast$data, uint32\+\_\+t num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a29cabf66dfd1621a0cc3bcf05cd47c4f}
+Escreve dados na memória utilizando como endereço o local atual na memória, definido pelo contador interno da classe 
+\begin{DoxyParams}{Parameters}
+{\em data} & valor que vai ser escrito \\
+\hline
+{\em num\+Bytes} & número de bytes que serão escritos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+número de bytes efetivamente escritos 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write@{write}}
+\index{write@{write}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write(uint32\+\_\+t address, const void $\ast$data, uint32\+\_\+t num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t E\+E\+P\+R\+O\+M\+::write (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{const void $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_af39d935af251a00cd4aa4d5bd71fe4e4}
+Escreve dados na memória. Se a escrita passar por mais de 1 página (128 bytes), divide as escritas. 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço de 17 bits em que vai ser escrito o dado \\
+\hline
+{\em data} & valor que foi lido \\
+\hline
+{\em num\+Bytes} & número de bytes que serão lidos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+número de bytes efetivamente lidos 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write\+Byte@{write\+Byte}}
+\index{write\+Byte@{write\+Byte}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write\+Byte(uint8\+\_\+t data)}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+E\+P\+R\+O\+M\+::write\+Byte (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{data}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a51ebf51e31d4f11f17963043a8b976b8}
+Escreve 1 byte na memória utilizando como endereço o local atual na memória, definido pelo contador interno da classe 
+\begin{DoxyParams}{Parameters}
+{\em data} & byte que vai ser escrito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se ocorreu tudo bem, F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write\+Float@{write\+Float}}
+\index{write\+Float@{write\+Float}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write\+Float(float data)}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+E\+P\+R\+O\+M\+::write\+Float (
+\begin{DoxyParamCaption}
+\item[{float}]{data}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a4870b8f8d5128f9abe3ec171643ef0fb}
+Escreve um float na memória 
+\begin{DoxyParams}{Parameters}
+{\em data} & float que vai ser escrito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se operação ocorreu com sucesso, F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write\+Int@{write\+Int}}
+\index{write\+Int@{write\+Int}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write\+Int(int32\+\_\+t data)}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+E\+P\+R\+O\+M\+::write\+Int (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{data}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a4374cee02f19318210f8bd35141f34d7}
+Escreve um inteiro na memória 
+\begin{DoxyParams}{Parameters}
+{\em data} & inteiro que vai ser escrito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se operação ocorreu com sucesso, F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+\index{E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}!write\+U\+Int@{write\+U\+Int}}
+\index{write\+U\+Int@{write\+U\+Int}!E\+E\+P\+R\+OM@{E\+E\+P\+R\+OM}}
+\subsubsection[{write\+U\+Int(uint32\+\_\+t data)}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+E\+P\+R\+O\+M\+::write\+U\+Int (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{data}
+\end{DoxyParamCaption}
+)}\label{class_e_e_p_r_o_m_a241557d6a159819cbeb182b368d910af}
+Escreve um unsigned int na memória 
+\begin{DoxyParams}{Parameters}
+{\em data} & unsigned int que vai ser escrito \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE se operação ocorreu com sucesso, F\+A\+L\+SE caso contrário 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/E\+E\+P\+R\+O\+M.\+h\end{DoxyCompactItemize}

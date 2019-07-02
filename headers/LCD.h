@@ -106,7 +106,7 @@ public:
 
 	/**
 	 * Imprime um decimal de 16 bits
-	 * @param nr
+	 * @param nr número
 	 * @param lin linha de início
 	 * @param col coluna de início
 	 */
@@ -114,7 +114,7 @@ public:
 
 	/**
 	 * Imprime um decimal de 8 bits
-	 * @param nr
+	 * @param nr número
 	 * @param lin linha de início
 	 * @param col coluna de início
 	 */
@@ -122,7 +122,7 @@ public:
 
 	/**
 	 * Imprime um hexadecimal de 16 bits
-	 * @param nr
+	 * @param nr número
 	 * @param lin linha de início
 	 * @param col coluna de início
 	 */
@@ -130,7 +130,7 @@ public:
 
 	/**
 	 * Imprime um hexadecimal de 8 bits
-	 * @param nr
+	 * @param nr número
 	 * @param lin linha de início
 	 * @param col coluna de início
 	 */
@@ -138,7 +138,7 @@ public:
 
 	/**
 	 * Imprime uma letra em 8 bits
-	 * @param nr
+	 * @param nr char
 	 * @param lin linha de início
 	 * @param col coluna de início
 	 */

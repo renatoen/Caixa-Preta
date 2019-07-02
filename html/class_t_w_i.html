@@ -106,8 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aada3a61390b78a34c51565ecf534e0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90bcdbb964dc3876cf8876d8ba579964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_w_i.html#a90bcdbb964dc3876cf8876d8ba579964">sendData</a> (byte dado)</td></tr>
 <tr class="separator:a90bcdbb964dc3876cf8876d8ba579964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e9af998955b0c875521e713a68935a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_w_i.html#ae3e9af998955b0c875521e713a68935a">readData</a> (bool ack)</td></tr>
-<tr class="separator:ae3e9af998955b0c875521e713a68935a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22fbccf340064182a0fa99447ec0eef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_w_i.html#ab22fbccf340064182a0fa99447ec0eef">readData</a> (bool ack, uint8_t *data)</td></tr>
+<tr class="separator:ab22fbccf340064182a0fa99447ec0eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a055a0378dde5773bf5909055d05b735b"></a>
@@ -133,26 +133,37 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae3e9af998955b0c875521e713a68935a"></a>
+<a class="anchor" id="ab22fbccf340064182a0fa99447ec0eef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t TWI::readData </td>
+          <td class="memname">bool TWI::readData </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ack</em></td><td>)</td>
+          <td class="paramname"><em>ack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Lê um dado. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ack</td><td>determina se quer receber ACK (TRUE) ou NACK (FALSE) </td></tr>
+    <tr><td class="paramname">data</td><td>byte lido </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>dado lido </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TRUE se ocorreu tudo bem, FALSE caso contrario </dd></dl>
 
 </div>
 </div>

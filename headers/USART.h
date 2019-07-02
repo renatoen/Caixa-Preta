@@ -45,6 +45,12 @@ public:
 	USART(int serialNumber, long baudRate);
 
 	/**
+	 * Verifica se existe algo para ler na porta serial
+	 * @return TRUE se existir, FALSE se não
+	 */
+	bool isAvailable();
+
+	/**
 	 * Lê um byte da porta serial.
 	 * @return byte lido
 	 */

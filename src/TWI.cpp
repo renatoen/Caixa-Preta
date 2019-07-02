@@ -5,6 +5,7 @@
  * do escravo.
  * @param freq frequência utilizada
  */
+ //TODO: fazer a frequencia como calculo, igual o baud rate do usart
 TWI::TWI(int freq) {
 
 	this->cont = 0;
@@ -185,9 +186,10 @@ bool TWI::sendData(uint8_t dado) {
 /**
  * Lê um dado.
  * @param ack determina se quer receber ACK (TRUE) ou NACK (FALSE)
- * @return dado lido
+ * @param data byte lido
+ * @return TRUE se ocorreu tudo bem, FALSE caso contrario
  */
-uint8_t TWI::readData(bool ack) {
+bool TWI::readData(bool ack, uint8_t* data) {
 	byte status;
 
 	if (ack == true) { // envia ack
@@ -200,16 +202,17 @@ uint8_t TWI::readData(bool ack) {
 
 	if (waitTask()) {
 		if ((TWSR & 0xF8) == status) {
+			*data = TWDR;
 			return TWDR;
 		} else {
 			//erro: info nunca recebida
 			sendStop();
-			return 0;
+			return false;
 		}
 	} else {
 		//erro: tarefa nunca concluida
 		sendStop();
 
-		return 0;
+		return false;
 	}
 }

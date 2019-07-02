@@ -106,7 +106,7 @@ void Button::clearBuffer() {
 }
 
 /**
- * Inicialização do ADC que é usado na laeitura das chaves.
+ * Inicialização do ADC que é usado na leitura das chaves.
  * Modo Free Running e leitura apenas do ADCH
  */
 void Button::startADC(){

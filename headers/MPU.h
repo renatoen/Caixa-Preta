@@ -85,9 +85,10 @@ public:
 	/**
 	 * Ler um registrador do MPU
 	 * @param reg registrador
-	 * @return dado que foi lido
+	 * @param dado byte que foi lido
+	 * @return TRUE se operação ocorreu com sucesso, FALSE caso contrário
 	 */
-	byte readRegister(byte reg);
+	bool readRegister(byte reg, uint8_t* dado);
 
 	/**
 	 * Escrever um bloco de dados no MPU a partir de um registrador
@@ -152,6 +153,18 @@ public:
 	 * @param valor
 	 */
 	void calibrate(int16_t *bias, float  *valor);
+
+	/**
+	 * Retorna a resolução do acelerômetro
+	 * @return float com a resolução
+	 */
+	float getAcelRes();
+
+	/**
+	 * Retorna a resolução do giroscópio
+	 * @return float com a resolução
+	 */
+	float getGiroRes();
 };
 
 #endif

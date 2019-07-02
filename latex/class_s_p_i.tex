@@ -1,0 +1,70 @@
+\section{S\+PI Class Reference}
+\label{class_s_p_i}\index{S\+PI@{S\+PI}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf S\+PI} ()
+\item 
+{\bf S\+PI} (int slave\+Select, bool mestre=true)
+\item 
+void {\bf start} ()
+\item 
+void {\bf stop} ()
+\item 
+uint8\+\_\+t {\bf transferir} (uint8\+\_\+t dado)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+PI@{S\+PI}!S\+PI@{S\+PI}}
+\index{S\+PI@{S\+PI}!S\+PI@{S\+PI}}
+\subsubsection[{S\+P\+I()}]{\setlength{\rightskip}{0pt plus 5cm}S\+P\+I\+::\+S\+PI (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_s_p_i_a2ba081c29fbdecc704c6bf00b24d5205}
+Construtor default da classe. \index{S\+PI@{S\+PI}!S\+PI@{S\+PI}}
+\index{S\+PI@{S\+PI}!S\+PI@{S\+PI}}
+\subsubsection[{S\+P\+I(int slave\+Select, bool mestre=true)}]{\setlength{\rightskip}{0pt plus 5cm}S\+P\+I\+::\+S\+PI (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\+Select, }
+\item[{bool}]{mestre = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{class_s_p_i_acd14248d90f1d5cc58d0cb5727b09aa5}
+Construtor da classe \doxyref{S\+PI}{p.}{class_s_p_i}. Define a porta que o escravo está e se vai iniciar como escravo ou mestre, sendo default inciar como mestre  slave\+Select porta em que o escravo está conectado  mestre T\+R\+UE se for mestre (padrão) e F\+A\+L\+SE se for escravo 
+
+\subsection{Member Function Documentation}
+\index{S\+PI@{S\+PI}!start@{start}}
+\index{start@{start}!S\+PI@{S\+PI}}
+\subsubsection[{start()}]{\setlength{\rightskip}{0pt plus 5cm}void S\+P\+I\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_s_p_i_a95a37b3ca2033964a5db8c588c8d8cb5}
+Coloca a porta do slave em nível baixo, sinalizando que o Arduino o escolheu \index{S\+PI@{S\+PI}!stop@{stop}}
+\index{stop@{stop}!S\+PI@{S\+PI}}
+\subsubsection[{stop()}]{\setlength{\rightskip}{0pt plus 5cm}void S\+P\+I\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_s_p_i_a192f6d982b6ded37575a9cf9571fe157}
+Coloca a porta do slave em nível alto, liberando o canal para outra escolha de escravo \index{S\+PI@{S\+PI}!transferir@{transferir}}
+\index{transferir@{transferir}!S\+PI@{S\+PI}}
+\subsubsection[{transferir(uint8\+\_\+t dado)}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+P\+I\+::transferir (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{dado}
+\end{DoxyParamCaption}
+)}\label{class_s_p_i_acb2320ba78982a7ea055fb2822a75497}
+Envia e recebe um byte ao mesmo tempo pelo protocolo de comunicação \doxyref{S\+PI}{p.}{class_s_p_i} 
+\begin{DoxyParams}{Parameters}
+{\em dado} & dado em 8 bits que vai ser enviado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+dado que foi recebido 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/S\+P\+I.\+h\end{DoxyCompactItemize}

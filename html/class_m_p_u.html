@@ -99,8 +99,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a524c777097cbc9ae0c3942d1d115787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a048d708b54073a32c0daa6b1b8e4a365"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#a048d708b54073a32c0daa6b1b8e4a365">writeRegister</a> (byte reg, byte dado)</td></tr>
 <tr class="separator:a048d708b54073a32c0daa6b1b8e4a365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa42e2711c058fa9abe5af418ae4cf647"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#aa42e2711c058fa9abe5af418ae4cf647">readRegister</a> (byte reg)</td></tr>
-<tr class="separator:aa42e2711c058fa9abe5af418ae4cf647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b60a0869af1c5a9ebd8e5131074b5d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#a8b60a0869af1c5a9ebd8e5131074b5d6">readRegister</a> (byte reg, uint8_t *dado)</td></tr>
+<tr class="separator:a8b60a0869af1c5a9ebd8e5131074b5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a691201f2735fc1d9270166e0cb190e79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#a691201f2735fc1d9270166e0cb190e79">writeBlockData</a> (byte reg, byte *dado, byte qtd)</td></tr>
 <tr class="separator:a691201f2735fc1d9270166e0cb190e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbb1b779a2a248020210dddf074c077a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#abbb1b779a2a248020210dddf074c077a">readBlockData</a> (byte reg, byte *dado, byte qtd)</td></tr>
@@ -121,6 +121,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5559e8a86d055d7e6e9f19ff65851fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9978b29c17eee830126686e082799808"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#a9978b29c17eee830126686e082799808">calibrate</a> (int16_t *bias, float *valor)</td></tr>
 <tr class="separator:a9978b29c17eee830126686e082799808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1cd7247eafa75f846166f68d01566d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#a1d1cd7247eafa75f846166f68d01566d">getAcelRes</a> ()</td></tr>
+<tr class="separator:a1d1cd7247eafa75f846166f68d01566d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd5877de7355170d6da9138449456fe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u.html#abfd5877de7355170d6da9138449456fe">getGiroRes</a> ()</td></tr>
+<tr class="separator:abfd5877de7355170d6da9138449456fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -212,6 +216,38 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1d1cd7247eafa75f846166f68d01566d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MPU::getAcelRes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retorna a resolução do acelerômetro </p><dl class="section return"><dt>Returns</dt><dd>float com a resolução </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abfd5877de7355170d6da9138449456fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MPU::getGiroRes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retorna a resolução do giroscópio </p><dl class="section return"><dt>Returns</dt><dd>float com a resolução </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad0d6f8dfbf2e0b86f4918deaa1e1e8ff"></a>
 <div class="memitem">
 <div class="memproto">
@@ -290,26 +326,37 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa42e2711c058fa9abe5af418ae4cf647"></a>
+<a class="anchor" id="a8b60a0869af1c5a9ebd8e5131074b5d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">byte MPU::readRegister </td>
+          <td class="memname">bool MPU::readRegister </td>
           <td>(</td>
           <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>dado</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Ler um registrador do <a class="el" href="class_m_p_u.html">MPU</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reg</td><td>registrador </td></tr>
+    <tr><td class="paramname">dado</td><td>byte que foi lido </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>dado que foi lido </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TRUE se operação ocorreu com sucesso, FALSE caso contrário </dd></dl>
 
 </div>
 </div>

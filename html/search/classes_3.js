@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rawdegrees',['RawDegrees',['../struct_raw_degrees.html',1,'']]]
+  ['gpsdata',['GPSdata',['../struct_g_p_sdata.html',1,'']]]
 ];

@@ -4,6 +4,7 @@
 // Includes
 #include <stdint.h>
 #include <Arduino.h>
+#include <limits.h>
 
 // Defines
 
@@ -86,9 +87,10 @@ public:
 	/**
 	 * Lê um dado.
 	 * @param ack determina se quer receber ACK (TRUE) ou NACK (FALSE)
-	 * @return dado lido
+	 * @param data byte lido
+	 * @return TRUE se ocorreu tudo bem, FALSE caso contrario
 	 */
-	uint8_t readData(bool ack);
+	bool readData(bool ack, uint8_t* data);
 
 };
 

@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['usart',['USART',['../class_u_s_a_r_t.html#a538ccfb4c4ae821f4fd4e87afe9fd96e',1,'USART::USART()'],['../class_u_s_a_r_t.html#a680846cecf681784c7a113d145104c5d',1,'USART::USART(int serialNumber, long baudRate)']]]
+  ['timer5',['Timer5',['../class_timer5.html#a82c6316153caec142bc440cb64fa3502',1,'Timer5']]],
+  ['transferir',['transferir',['../class_s_p_i.html#acb2320ba78982a7ea055fb2822a75497',1,'SPI']]],
+  ['turnoffall',['turnOffAll',['../class_leds.html#abe056fe9a1c82d84cf52c9b557ea6430',1,'Leds']]],
+  ['turnonall',['turnOnAll',['../class_leds.html#a0f785e583bff2cf5c9f1196594d94b59',1,'Leds']]],
+  ['twi',['TWI',['../class_t_w_i.html#a055a0378dde5773bf5909055d05b735b',1,'TWI']]]
 ];

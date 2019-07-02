@@ -1,0 +1,316 @@
+\begin{theindex}
+
+  \item {axi}
+    \subitem {M\+PU}, 20
+  \item {ayi}
+    \subitem {M\+PU}, 20
+  \item {azi}
+    \subitem {M\+PU}, 20
+
+  \indexspace
+
+  \item {back\+Light}
+    \subitem {L\+CD}, 12
+  \item {Button}, 5
+    \subitem {Button}, 5
+    \subitem {read\+Buffer}, 5
+    \subitem {read\+Buttons}, 5
+
+  \indexspace
+
+  \item {calibrate}
+    \subitem {M\+PU}, 17
+  \item {caracter}
+    \subitem {L\+CD}, 12
+  \item {command}
+    \subitem {L\+CD}, 12
+  \item {cursor}
+    \subitem {L\+CD}, 12
+
+  \indexspace
+
+  \item {E\+E\+P\+R\+OM}, 6
+    \subitem {E\+E\+P\+R\+OM}, 6
+    \subitem {get\+Position}, 6
+    \subitem {read}, 7
+    \subitem {read\+Byte}, 7
+    \subitem {read\+Float}, 7
+    \subitem {read\+Int}, 8
+    \subitem {read\+U\+Int}, 8
+    \subitem {set\+Position}, 8
+    \subitem {write}, 8, 9
+    \subitem {write\+Byte}, 9
+    \subitem {write\+Float}, 9
+    \subitem {write\+Int}, 9
+    \subitem {write\+U\+Int}, 10
+
+  \indexspace
+
+  \item {Firmware}, 10
+
+  \indexspace
+
+  \item {G\+P\+Sdata}, 11
+  \item {get\+Acel\+Res}
+    \subitem {M\+PU}, 17
+  \item {get\+Giro\+Res}
+    \subitem {M\+PU}, 18
+  \item {get\+Mode}
+    \subitem {S\+R\+AM}, 23
+  \item {get\+Position}
+    \subitem {E\+E\+P\+R\+OM}, 6
+  \item {green}
+    \subitem {Leds}, 15
+  \item {gxi}
+    \subitem {M\+PU}, 20
+  \item {gyi}
+    \subitem {M\+PU}, 20
+  \item {gzi}
+    \subitem {M\+PU}, 20
+
+  \indexspace
+
+  \item {is\+Available}
+    \subitem {U\+S\+A\+RT}, 32
+  \item {is\+Busy}
+    \subitem {L\+CD}, 12
+
+  \indexspace
+
+  \item {L\+CD}, 11
+    \subitem {back\+Light}, 12
+    \subitem {caracter}, 12
+    \subitem {command}, 12
+    \subitem {cursor}, 12
+    \subitem {is\+Busy}, 12
+    \subitem {L\+CD}, 12
+    \subitem {lcd\+\_\+buffer}, 15
+    \subitem {lcd\+\_\+flag0}, 15
+    \subitem {lcd\+\_\+flag1}, 15
+    \subitem {load\+Buffer}, 13
+    \subitem {load\+Buffer\+White}, 13
+    \subitem {load\+L\+CD}, 13
+    \subitem {print\+Char}, 13
+    \subitem {print\+Char8}, 13
+    \subitem {print\+Dec16}, 14
+    \subitem {print\+Dec8}, 14
+    \subitem {print\+Hex16}, 14
+    \subitem {print\+Hex8}, 14
+    \subitem {read\+Address\+Counter}, 14
+    \subitem {set\+Cursor}, 14
+    \subitem {start\+Config}, 15
+  \item {lcd\+\_\+buffer}
+    \subitem {L\+CD}, 15
+  \item {lcd\+\_\+flag0}
+    \subitem {L\+CD}, 15
+  \item {lcd\+\_\+flag1}
+    \subitem {L\+CD}, 15
+  \item {Leds}, 15
+    \subitem {green}, 15
+    \subitem {Leds}, 15
+    \subitem {red}, 16
+    \subitem {turn\+Off\+All}, 16
+    \subitem {turn\+On\+All}, 16
+    \subitem {yellow}, 16
+  \item {load\+Buffer}
+    \subitem {L\+CD}, 13
+  \item {load\+Buffer\+White}
+    \subitem {L\+CD}, 13
+  \item {load\+L\+CD}
+    \subitem {L\+CD}, 13
+
+  \indexspace
+
+  \item {M\+PU}, 16
+    \subitem {axi}, 20
+    \subitem {ayi}, 20
+    \subitem {azi}, 20
+    \subitem {calibrate}, 17
+    \subitem {get\+Acel\+Res}, 17
+    \subitem {get\+Giro\+Res}, 18
+    \subitem {gxi}, 20
+    \subitem {gyi}, 20
+    \subitem {gzi}, 20
+    \subitem {M\+PU}, 17
+    \subitem {read\+Accel\+Temp\+Gyros}, 18
+    \subitem {read\+Average\+Accel\+Temp\+Gyros}, 18
+    \subitem {read\+Block\+Data}, 18
+    \subitem {read\+Register}, 18
+    \subitem {self\+Test}, 19
+    \subitem {set\+Scale}, 19
+    \subitem {sleep}, 19
+    \subitem {tpi}, 21
+    \subitem {wake\+Up}, 19
+    \subitem {who\+AmI}, 19
+    \subitem {write\+Block\+Data}, 19
+    \subitem {write\+Register}, 20
+
+  \indexspace
+
+  \item {print}
+    \subitem {U\+S\+A\+RT}, 32, 33
+  \item {print\+Char}
+    \subitem {L\+CD}, 13
+  \item {print\+Char8}
+    \subitem {L\+CD}, 13
+  \item {print\+Dec16}
+    \subitem {L\+CD}, 14
+  \item {print\+Dec8}
+    \subitem {L\+CD}, 14
+  \item {print\+Hex16}
+    \subitem {L\+CD}, 14
+  \item {print\+Hex8}
+    \subitem {L\+CD}, 14
+  \item {println}
+    \subitem {U\+S\+A\+RT}, 33, 34
+
+  \indexspace
+
+  \item {Raw\+Degrees}, 21
+  \item {read}
+    \subitem {E\+E\+P\+R\+OM}, 7
+  \item {read\+Accel\+Temp\+Gyros}
+    \subitem {M\+PU}, 18
+  \item {read\+Address\+Counter}
+    \subitem {L\+CD}, 14
+  \item {read\+Average\+Accel\+Temp\+Gyros}
+    \subitem {M\+PU}, 18
+  \item {read\+Block\+Data}
+    \subitem {M\+PU}, 18
+  \item {read\+Buffer}
+    \subitem {Button}, 5
+  \item {read\+Buttons}
+    \subitem {Button}, 5
+  \item {read\+Byte}
+    \subitem {E\+E\+P\+R\+OM}, 7
+    \subitem {U\+S\+A\+RT}, 35
+  \item {read\+Data}
+    \subitem {T\+WI}, 30
+  \item {read\+Float}
+    \subitem {E\+E\+P\+R\+OM}, 7
+  \item {read\+Int}
+    \subitem {E\+E\+P\+R\+OM}, 8
+  \item {read\+Register}
+    \subitem {M\+PU}, 18
+  \item {read\+Seq}
+    \subitem {S\+R\+AM}, 23
+  \item {read\+U\+Int}
+    \subitem {E\+E\+P\+R\+OM}, 8
+  \item {red}
+    \subitem {Leds}, 16
+
+  \indexspace
+
+  \item {S\+PI}, 21
+    \subitem {S\+PI}, 21
+    \subitem {start}, 22
+    \subitem {stop}, 22
+    \subitem {transferir}, 22
+  \item {S\+R\+AM}, 22
+    \subitem {get\+Mode}, 23
+    \subitem {read\+Seq}, 23
+    \subitem {S\+R\+AM}, 22
+    \subitem {set\+Mode}, 23
+    \subitem {write\+Seq}, 23
+  \item {self\+Test}
+    \subitem {M\+PU}, 19
+  \item {send\+Data}
+    \subitem {T\+WI}, 30
+  \item {send\+Read\+Address}
+    \subitem {T\+WI}, 30
+  \item {send\+Repeated\+Start}
+    \subitem {T\+WI}, 30
+  \item {send\+Start}
+    \subitem {T\+WI}, 31
+  \item {send\+Stop}
+    \subitem {T\+WI}, 31
+  \item {send\+Write\+Address}
+    \subitem {T\+WI}, 31
+  \item {set\+Cursor}
+    \subitem {L\+CD}, 14
+  \item {set\+Mode}
+    \subitem {S\+R\+AM}, 23
+  \item {set\+Position}
+    \subitem {E\+E\+P\+R\+OM}, 8
+  \item {set\+Scale}
+    \subitem {M\+PU}, 19
+  \item {sleep}
+    \subitem {M\+PU}, 19
+  \item {start}
+    \subitem {S\+PI}, 22
+  \item {start\+Config}
+    \subitem {L\+CD}, 15
+  \item {stop}
+    \subitem {S\+PI}, 22
+
+  \indexspace
+
+  \item {T\+WI}, 29
+    \subitem {read\+Data}, 30
+    \subitem {send\+Data}, 30
+    \subitem {send\+Read\+Address}, 30
+    \subitem {send\+Repeated\+Start}, 30
+    \subitem {send\+Start}, 31
+    \subitem {send\+Stop}, 31
+    \subitem {send\+Write\+Address}, 31
+    \subitem {T\+WI}, 29
+  \item {Timer5}, 24
+    \subitem {Timer5}, 24
+  \item {Tiny\+G\+P\+S\+Altitude}, 24
+  \item {Tiny\+G\+P\+S\+Course}, 25
+  \item {Tiny\+G\+P\+S\+Custom}, 25
+  \item {Tiny\+G\+P\+S\+Date}, 25
+  \item {Tiny\+G\+P\+S\+Decimal}, 26
+  \item {Tiny\+G\+P\+S\+H\+D\+OP}, 26
+  \item {Tiny\+G\+P\+S\+Integer}, 27
+  \item {Tiny\+G\+P\+S\+Location}, 27
+  \item {Tiny\+G\+P\+S\+Plus}, 28
+  \item {Tiny\+G\+P\+S\+Speed}, 28
+  \item {Tiny\+G\+P\+S\+Time}, 29
+  \item {tpi}
+    \subitem {M\+PU}, 21
+  \item {transferir}
+    \subitem {S\+PI}, 22
+  \item {turn\+Off\+All}
+    \subitem {Leds}, 16
+  \item {turn\+On\+All}
+    \subitem {Leds}, 16
+
+  \indexspace
+
+  \item {U\+S\+A\+RT}, 31
+    \subitem {is\+Available}, 32
+    \subitem {print}, 32, 33
+    \subitem {println}, 33, 34
+    \subitem {read\+Byte}, 35
+    \subitem {U\+S\+A\+RT}, 32
+
+  \indexspace
+
+  \item {wake\+Up}
+    \subitem {M\+PU}, 19
+  \item {who\+AmI}
+    \subitem {M\+PU}, 19
+  \item {write}
+    \subitem {E\+E\+P\+R\+OM}, 8, 9
+  \item {write\+Block\+Data}
+    \subitem {M\+PU}, 19
+  \item {write\+Byte}
+    \subitem {E\+E\+P\+R\+OM}, 9
+  \item {write\+Float}
+    \subitem {E\+E\+P\+R\+OM}, 9
+  \item {write\+Int}
+    \subitem {E\+E\+P\+R\+OM}, 9
+  \item {write\+Register}
+    \subitem {M\+PU}, 20
+  \item {write\+Seq}
+    \subitem {S\+R\+AM}, 23
+  \item {write\+U\+Int}
+    \subitem {E\+E\+P\+R\+OM}, 10
+
+  \indexspace
+
+  \item {yellow}
+    \subitem {Leds}, 16
+
+\end{theindex}

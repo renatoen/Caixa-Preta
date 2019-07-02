@@ -84,6 +84,41 @@ void USART::sendByte(byte dado) {
 }
 
 /**
+ * Verifica se existe algo para ler na porta serial
+ * @return TRUE se existir, FALSE se não
+ */
+bool USART::isAvailable() {
+	switch (this->serial) {
+		case 0:
+			if ((UCSR0A&(1<<RXC0)) == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		case 1:
+			if ((UCSR1A&(1<<RXC1)) == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		case 2:
+			if ((UCSR2A&(1<<RXC2)) == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		case 3:
+			if ((UCSR3A&(1<<RXC3)) == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		default:
+			break;
+	}
+}
+
+/**
  * Lê um byte da porta serial.
  * @return byte lido
  */

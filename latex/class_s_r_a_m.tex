@@ -1,0 +1,105 @@
+\section{S\+R\+AM Class Reference}
+\label{class_s_r_a_m}\index{S\+R\+AM@{S\+R\+AM}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf S\+R\+AM} ()
+\item 
+{\bf S\+R\+AM} (int port)
+\item 
+uint8\+\_\+t {\bf get\+Mode} ()
+\item 
+void {\bf set\+Mode} (uint8\+\_\+t mode)
+\item 
+void {\bf write\+Seq} (uint32\+\_\+t address, int16\+\_\+t $\ast$data, uint16\+\_\+t num)
+\item 
+void {\bf read\+Seq} (uint32\+\_\+t address, int16\+\_\+t $\ast$data, uint32\+\_\+t num)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+R\+AM@{S\+R\+AM}!S\+R\+AM@{S\+R\+AM}}
+\index{S\+R\+AM@{S\+R\+AM}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{S\+R\+A\+M()}]{\setlength{\rightskip}{0pt plus 5cm}S\+R\+A\+M\+::\+S\+R\+AM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_af22f5f9da2684640c2e6ca7099d02fe0}
+Construtor default da classe. \index{S\+R\+AM@{S\+R\+AM}!S\+R\+AM@{S\+R\+AM}}
+\index{S\+R\+AM@{S\+R\+AM}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{S\+R\+A\+M(int port)}]{\setlength{\rightskip}{0pt plus 5cm}S\+R\+A\+M\+::\+S\+R\+AM (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_ae27bb693cef642f98b7e1292946c484c}
+Construtor que recebe qual o pino que o Arduino está usando para selecionar a \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} 
+\begin{DoxyParams}{Parameters}
+{\em port} & pino do arduino que conecta no SS da \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{S\+R\+AM@{S\+R\+AM}!get\+Mode@{get\+Mode}}
+\index{get\+Mode@{get\+Mode}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{get\+Mode()}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t S\+R\+A\+M\+::get\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_af2e1346ee7b714ca367a9594cf203c9d}
+Lê o registrador de modo de operação da \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} \begin{DoxyReturn}{Returns}
+byte que representa o modo de operação atual 
+\end{DoxyReturn}
+\index{S\+R\+AM@{S\+R\+AM}!read\+Seq@{read\+Seq}}
+\index{read\+Seq@{read\+Seq}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{read\+Seq(uint32\+\_\+t address, int16\+\_\+t $\ast$data, uint32\+\_\+t num)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+R\+A\+M\+::read\+Seq (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{int16\+\_\+t $\ast$}]{data, }
+\item[{uint32\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_a28b5a347eae27aea79188debd7ac42ed}
+Lê uma sequência de dados da \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} a partir de um endereço 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço em que o dado será lido \\
+\hline
+{\em data} & vetor de dados de 16 bits que receberá a informação \\
+\hline
+{\em num} & tamanho do vetor data \\
+\hline
+\end{DoxyParams}
+\index{S\+R\+AM@{S\+R\+AM}!set\+Mode@{set\+Mode}}
+\index{set\+Mode@{set\+Mode}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{set\+Mode(uint8\+\_\+t mode)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+R\+A\+M\+::set\+Mode (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{mode}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_a455db70b2e7fa721c36c92205c102ad6}
+Define o modo de operação da \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} escrevendo no registrador de modo 
+\begin{DoxyParams}{Parameters}
+{\em byte} & que define o modo de operação que será utilizado \\
+\hline
+\end{DoxyParams}
+\index{S\+R\+AM@{S\+R\+AM}!write\+Seq@{write\+Seq}}
+\index{write\+Seq@{write\+Seq}!S\+R\+AM@{S\+R\+AM}}
+\subsubsection[{write\+Seq(uint32\+\_\+t address, int16\+\_\+t $\ast$data, uint16\+\_\+t num)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+R\+A\+M\+::write\+Seq (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{int16\+\_\+t $\ast$}]{data, }
+\item[{uint16\+\_\+t}]{num}
+\end{DoxyParamCaption}
+)}\label{class_s_r_a_m_a32f730c75da098e362d1577dddd23142}
+Escreve uma sequência de dados na \doxyref{S\+R\+AM}{p.}{class_s_r_a_m} a partir de um endereço 
+\begin{DoxyParams}{Parameters}
+{\em address} & endereço que o dado será escrito \\
+\hline
+{\em data} & vetor de dados de 16 bits que será escrito \\
+\hline
+{\em num} & tamanho do vetor data \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/S\+R\+A\+M.\+h\end{DoxyCompactItemize}

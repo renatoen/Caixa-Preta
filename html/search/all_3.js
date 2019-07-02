@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['green',['green',['../class_leds.html#aae0a51182e5cbf41b066f1931b528e3b',1,'Leds']]],
-  ['gxi',['gxi',['../class_m_p_u.html#a16a4ca3ef12197ee9876e71033c20f4f',1,'MPU']]],
-  ['gyi',['gyi',['../class_m_p_u.html#a5ae8eb6cc6be2a2a91957a34d59dc468',1,'MPU']]],
-  ['gzi',['gzi',['../class_m_p_u.html#ac43952f01d98aad441ff08f53aa281a8',1,'MPU']]]
+  ['eeprom',['EEPROM',['../class_e_e_p_r_o_m.html',1,'EEPROM'],['../class_e_e_p_r_o_m.html#a025ff5824e686e9c55ba5b46923f99d6',1,'EEPROM::EEPROM()'],['../class_e_e_p_r_o_m.html#ad0e017278b98f51680c23de3c5e1540a',1,'EEPROM::EEPROM(uint8_t frequencia, bool byteA1, bool byteA0)']]]
 ];

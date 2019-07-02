@@ -90,20 +90,6 @@
 \setcounter{secnumdepth}{5}
 \makeindex
 
-% Hyperlinks (required, but should be loaded last)
-\usepackage{ifpdf}
-\ifpdf
-  \usepackage[pdftex,pagebackref=true]{hyperref}
-\else
-  \usepackage[ps2pdf,pagebackref=true]{hyperref}
-\fi
-\hypersetup{%
-  colorlinks=true,%
-  linkcolor=blue,%
-  citecolor=blue,%
-  unicode%
-}
-
 % Custom commands
 \newcommand{\clearemptydoublepage}{%
   \newpage{\pagestyle{empty}\cleardoublepage}%
@@ -117,10 +103,6 @@
 \begin{document}
 
 % Titlepage & ToC
-\hypersetup{pageanchor=false,
-             bookmarksnumbered=true,
-             pdfencoding=unicode
-            }
 \pagenumbering{roman}
 \begin{titlepage}
 \vspace*{7cm}
@@ -134,7 +116,6 @@
 \tableofcontents
 \clearemptydoublepage
 \pagenumbering{arabic}
-\hypersetup{pageanchor=true}
 
 %--- Begin generated contents ---
 \chapter{Hierarchical Index}
@@ -143,10 +124,15 @@
 \input{annotated}
 \chapter{Class Documentation}
 \input{class_button}
+\input{class_e_e_p_r_o_m}
+\input{class_firmware}
+\input{struct_g_p_sdata}
 \input{class_l_c_d}
 \input{class_leds}
 \input{class_m_p_u}
 \input{struct_raw_degrees}
+\input{class_s_p_i}
+\input{class_s_r_a_m}
 \input{class_timer5}
 \input{struct_tiny_g_p_s_altitude}
 \input{struct_tiny_g_p_s_course}

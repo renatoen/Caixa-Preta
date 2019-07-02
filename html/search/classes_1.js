@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lcd',['LCD',['../class_l_c_d.html',1,'']]],
-  ['leds',['Leds',['../class_leds.html',1,'']]]
+  ['eeprom',['EEPROM',['../class_e_e_p_r_o_m.html',1,'']]]
 ];

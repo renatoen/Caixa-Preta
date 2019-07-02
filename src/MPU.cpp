@@ -31,10 +31,10 @@ MPU::MPU(int freq) {
 /**
  * Ler um registrador do MPU
  * @param reg registrador
- * @return dado que foi lido
+ * @param dado byte que foi lido
+ * @return TRUE se operação ocorreu com sucesso, FALSE caso contrário
  */
-byte MPU::readRegister(byte reg) {
-	uint8_t dado = 0;
+bool MPU::readRegister(byte reg, uint8_t* dado) {
 	TWI leitura(this->frequencia);
 
 	if (leitura.sendStart()) {
@@ -47,13 +47,11 @@ byte MPU::readRegister(byte reg) {
 					// enviou start repetido
 					if (leitura.sendReadAddress(MPU_ERD)) {
 						// enviou endereço de leitura
-
 						// receber dado com NACK
-						dado = leitura.readData(false);
-
-						if (dado != 0) {
+						if (leitura.readData(false, dado)) {
 							// recebeu o dado
 							leitura.sendStop();
+							return true;
 						}
 					} else {
 						// erro no envio de endereço de leitura
@@ -71,7 +69,7 @@ byte MPU::readRegister(byte reg) {
 		// erro no envio do start
 	}
 
-	return dado;
+	return false;
 }
 
 /**
@@ -169,9 +167,9 @@ void MPU::readBlockData(byte reg, byte* dado, byte qtd) {
 
 						for (uint8_t i = 0; i < qtd; i++) {
 							if ((i + 1) < qtd) {
-								dado[i] = leitura.readData(true); // Receber dados e gerar ACK
+								leitura.readData(true, &dado[i]); // Receber dados e gerar ACK
 							}else {
-								dado[i] = leitura.readData(false); // Receber último dado e gerar NACK
+								leitura.readData(false, &dado[i]); // Receber último dado e gerar NACK
 							}
 						}
 						//TODO: arrumar um jeito de reportar erro na leitura do bloco
@@ -200,8 +198,10 @@ void MPU::readBlockData(byte reg, byte* dado, byte qtd) {
  * @return valor do registrador
  */
 byte MPU::whoAmI() {
+	uint8_t dado = 0;
+	readRegister(WHO_AM_I, &dado);
 
-	return readRegister(WHO_AM_I);
+	return dado;
 }
 
 /**
@@ -352,11 +352,15 @@ bool MPU::selfTest() {
   	gz2 = (int16_t)((aux[12] << 8) | aux[13]);
 
   	// Leitura dos resultados do self-test
-	aux[0] = readRegister(SELF_TEST_X);	//Eixo X: resultado self-test
-  	aux[1] = readRegister(SELF_TEST_Y);	//Eixo Y: resultado self-test
-	aux[2] = readRegister(SELF_TEST_Z);	//Eixo Z: resultado self-test
-	aux[3] = readRegister(SELF_TEST_A);	//Restante dos resultados
+	readRegister(SELF_TEST_X, &aux[0]);	//Eixo X: resultado self-test
+  	readRegister(SELF_TEST_Y, &aux[1]);	//Eixo Y: resultado self-test
+	readRegister(SELF_TEST_Z, &aux[2]);	//Eixo Z: resultado self-test
+	readRegister(SELF_TEST_A, &aux[3]);	//Restante dos resultados
 
+	// erro na leitura de algum dos registradores
+	if (aux[0] == INT_MAX || aux[1] == INT_MAX || aux[2] == INT_MAX || aux[3] == INT_MAX) {
+		return false;
+	}
 
   	// Extrair dados do registradores de self-test
   	ax3 = (aux[0] >> 3) | ((aux[3] >> 4) & 3) ; // XA_TEST
@@ -429,10 +433,11 @@ bool MPU::selfTest() {
  * @param bias
  * @param valor
  */
-void MPU::calibrate(int16_t *bias, float  *valor) { //TODO:trocar nome
+void MPU::calibrate(int16_t *bias, float  *valor) {
 	// char msg[100]; 	//	Descomentar se for imprimir valores de offset
   	uint8_t data[14];   //	Receber dados do acel e giro
   	int32_t abx = 0, aby = 0, abz = 0, gbx = 0, gby = 0, gbz = 0; //	Somatório erro acel e giro
+	uint8_t aux;
 
 
   	// Resetar MPU, o Reset se apaga sozinho
@@ -455,12 +460,15 @@ void MPU::calibrate(int16_t *bias, float  *valor) { //TODO:trocar nome
 
   	// Habilitar bit DATA_RDY_INT para indicar dado pronto
 	writeRegister(INT_ENABLE, 0x01);	//Será usado polling
-	readRegister(INT_STATUS);			//Leitura para apagar o bit
+	readRegister(INT_STATUS, &aux);		//Leitura para apagar o bit
 
   	// Laço principal: somatório de 256 leituras
   	for (uint16_t j = 0; j < 256; j++) {
-    	while ((readRegister(INT_STATUS) & 1) ==  0)
+		readRegister(INT_STATUS, &aux);
+    	while((aux & 1) ==  0) {
 			delay(1);
+			readRegister(INT_STATUS, &aux);
+		}
 
     	readBlockData(ACCEL_XOUT_H, data, 14);
     	abx += (int32_t) (((int16_t)data[0] << 8) | data[1]);
@@ -501,4 +509,20 @@ void MPU::calibrate(int16_t *bias, float  *valor) { //TODO:trocar nome
     // Serial.print(valor[4],2); Serial.println(" graus/s");
     // sprintf(msg,"Giro Z: %+06X --> ",bias[5]);  Serial.print(msg);
     // Serial.print(valor[5],2); Serial.println(" graus/s");
+}
+
+/**
+ * Retorna a resolução do acelerômetro
+ * @return float com a resolução
+ */
+float MPU::getAcelRes() {
+	return this->acel_res;
+}
+
+/**
+ * Retorna a resolução do giroscópio
+ * @return float com a resolução
+ */
+float MPU::getGiroRes() {
+	return this->giro_res;
 }
